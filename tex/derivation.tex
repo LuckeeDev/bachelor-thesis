@@ -92,7 +92,7 @@ The spherical Bessel functions behave as \(j_l(kr) \simeq \frac{1}{kr} \sin \lef
 \begin{equation}\label{deriv:exp_asymptotic}
 	e^{ikz} \to  \frac{1}{2ikr} \sum_{l} (2l+1) P_l (\cos \theta ) \left[ e^{ikr}  - (-1)^l e^{-ikr} \right]
 \end{equation}
-We now need to understand how the wave behaves after introducing a potential. Since angular momentum is conserved, each term of the series scatters independently with no change in amplitude, but only in phase. If we think about the equivalent one-dimensional problem once again, we can see the second term inside the square brackets in Eq. \eqref{deriv:exp_asymptotic} as an incoming left-traveling wave that scatters off of the infinite potential wall at \(r=0\) and is reflected into a right-traveling wave picking up a phase shift of \(2\delta _l\) \cite{griffiths}. The resulting asymptotic form of the solution is the following:
+We now need to understand how the solution behaves after introducing a potential. Since angular momentum is conserved, each term of the series scatters independently with no change in amplitude, but only in phase. If we think about the equivalent one-dimensional problem once again, we can see the second term inside the square brackets in Eq. \eqref{deriv:exp_asymptotic} as an incoming left-traveling wave that scatters off of the infinite potential wall at \(r=0\) and is reflected into a right-traveling wave picking up a phase shift of \(2\delta _l\) \cite{griffiths}. The resulting asymptotic form of the solution is the following:
 \begin{equation}\label{deriv:sol_asymptotic}
 	\psi_k \to \frac{1}{2ikr}\sum_{l} (2l+1)P_l(\cos \theta )\left[e^{i(kr+2\delta _l)}- (-1)^l e^{-ikr}  \right]
 \end{equation}
@@ -109,6 +109,21 @@ Corresponding terms in the series must be equal to each other, therefore
 	A_l \left[e^{i(kr + \delta _l)} e^{- il \frac{\pi }{2} } - e^{-i(kr + \delta _l)}e^{il \frac{\pi }{2}} \right]\\
 	A_l = \frac{2l+1}{k} e^{i \delta _l} i^l\\
 	\implies 
-	\psi _k = \frac{1}{k} \sum_{l} (2l+1)i^l e^{i \delta _l} P_l (\cos \theta ) R_{kl} (r)
+	\psi _k = \frac{1}{k} \sum_{l} (2l+1)i^l e^{i \delta _l} P_l (\cos \theta ) R_{kl} (r) \label{deriv:expansion}
 \end{gather}
 
+\subsubsection{Sommerfeld enhancement factor}
+The Sommerfeld enhancement factor, previously defined as \(S_k = \vert \psi _k(0) \vert ^2 \), can now be easily calculated from the result in Eq. \eqref{deriv:expansion}. In order to do this, we are going to study the behavior of the radial functions \(R_{kl} \) around the origin by plugging the trial solution \(\chi_{kl} = r^{p+1} \) with the constraint that \(p\geq 0\) into Eq. \eqref{deriv:radial_chi} approximated around the origin. Indeed, if the potential doesn't blow up faster than \(1 / r\) as \(r \to 0\), we can neglect it when compared to the kinetic terms:
+\begin{gather}
+	\frac{\mathrm{d}^2}{\mathrm{d}r^2} r^{p+1} \simeq \frac{l(l+1)}{r^2}r^{p+1} \text{ as } r \to 0 \\
+	\implies p(p+1)=l(l+1),
+\end{gather}
+which has solutions \(p=l\) and \(p=-l-1\). The second solution is not physically acceptable as it would make \(R_{kl} \) blow up at the origin, therefore \(R_{kl} \simeq r^l \) as \(r \to 0\). This means that the only term in the series that doesn't vanish at \(r=0\) is the one with \(l=0\), and that
+\begin{equation}
+	\psi _k (0) = \frac{R_{k,l=0}(0)}{k} = \frac{\displaystyle\lim_{r \to 0} \frac{\chi_{k,l=0}}{r}}{k} = \frac{\chi_{k,l=0}^{\prime} (0)}{k}
+\end{equation}
+We are now only interested in finding \(\chi_{k,l=0}\), which I will now simply rename to \(\chi \), a task that can be accomplished by solving the radial equation Eq. \eqref{deriv:radial_chi} in the specific case of \(l=0\):
+\begin{equation}
+	-\frac{1}{2\mu } \frac{\mathrm{d}^2 \chi}{\mathrm{d}r^2} + V(r) \chi = \frac{k^2}{2\mu } \chi,
+\end{equation}
+with the boundary conditions that \(\chi (0) = 0\) and \(\chi (r) \to \sin (kr + \delta)\) as \(r \to \infty \) as imposed by Eq. \eqref{deriv:chi_asymptotic}.
