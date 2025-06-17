@@ -125,7 +125,7 @@ which has solutions \(p=l\) and \(p=-l-1\). The second solution is not physicall
 	= \left\vert \frac{1}{k}\lim_{r \to 0} \frac{\chi_{k,l=0}}{r} \right\vert ^2
 	= \left\vert \frac{1}{k}\frac{\mathrm{d}\chi_{k,l=0}}{\mathrm{d}r} (0) \right\vert ^2
 \end{equation}
-We are now only interested in finding \(\chi_{k,l=0}\), which I will now simply rename to \(\chi \), a task that can be accomplished by solving the radial equation Eq. \eqref{deriv:radial_chi} in the specific case of \(l=0\):
+We are now only interested in finding \(\chi_{k,l=0}\), which I will now simply rename to \(\chi \), a task that can be accomplished by solving the radial equation \eqref{deriv:radial_chi} in the specific case of \(l=0\):
 \begin{equation}\label{deriv:goal_equation}
 	-\frac{1}{2\mu } \frac{\mathrm{d}^2 \chi}{\mathrm{d}r^2} + V(r) \chi = \frac{k^2}{2\mu } \chi,
 \end{equation}
@@ -141,10 +141,87 @@ In order to simplify Eq. \eqref{deriv:goal_equation} with the potential in Eq. \
 	\frac{\mathrm{d}^2}{\mathrm{d}r^2} = 4 \alpha ^2 \mu ^2 \frac{\mathrm{d}^2}{\mathrm{d}x^2} \text{ and } V(x) = - \frac{2\alpha ^2\mu}{x} 
 \end{equation}
 Eq. \eqref{deriv:goal_equation} now assumes the simpler form
-\begin{equation}
+\begin{equation}\label{deriv:final_equation}
 	- \chi^{\prime\prime} - \frac{1}{x} \chi = \varepsilon ^2 \chi,
 \end{equation}
 where the prime sign denotes derivation with respect to \(x\) and where I have defined \(\varepsilon \coloneqq \frac{v_{rel} }{2 \alpha }\). With these new variables, the Sommerfeld enhancement factor assumes the following form:
 \begin{equation}
 	S_{\varepsilon } = \left\vert \frac{1}{\varepsilon } \frac{\mathrm{d}\chi }{\mathrm{d}x} (0) \right\vert^2
 \end{equation}
+
+\subsection{Solution ansatz}
+In order to guess what the solution to this equation might look like, I'm going to study the asymptotic behavior of the equation at the origin and at infinity. At infinity, the \(1 / x\) term can be neglected compared to the \(\varepsilon ^2\) term and the equation is just
+\begin{equation}
+	\chi ^{\prime\prime} \simeq - \varepsilon ^2 \chi \text{ as } x \to \infty 
+\end{equation}
+Its solution is an exponential, \(\chi (x) \simeq e^{i \varepsilon x}\) as \(x \to \infty \). On the other hand, as \(x\) approaches \(0\), the potential term blows up and the constant \(\varepsilon ^2\) term becomes negligible, giving the following:
+\begin{equation}
+	\chi ^{\prime\prime} \simeq - \frac{1}{x} \chi \text{ as } x \to 0
+\end{equation}
+The solution to this second equation is not as straightforward as the first one, but it can be solved by substituting \(t^2\coloneqq x\) and expressing it as a Bessel equation. This leads to a solution that looks like
+% TODO: should I do this explicitly? Or should I mention that I used Mathematica?
+\begin{equation}
+	\chi (x) \underset{x \to 0}{\simeq} C_1 \sqrt{x} J_1 (2 \sqrt{x} ) + C_2 \sqrt{x} Y_1(2 \sqrt{x} ),
+\end{equation}
+where \(J_1\) and \(Y_1\) are the Bessel functions of the first and second order, respectively. However, \(\sqrt{x} Y_1 (2\sqrt{x} ) \) blows up as \(x\) approaches \(0\), and so we must set \(C_2 = 0\). Moreover, the Taylor expansion for the first order Bessel function is simply \(J_1 (2 \sqrt{x} ) \simeq \sqrt{x} \) as \(x \to 0\), therefore
+\begin{equation}
+	\chi (x) \underset{x \to 0}{\simeq} C_1x
+\end{equation}
+I am therefore going to try the following ansatz for the solution to this equation: \(\chi (x) \eqqcolon x e^{i\varepsilon x}v(x)\). It's important to note that this is not an approximation, because \(v(x)\) will take care of the interpolation between the two asymptotic behaviors of the function.
+
+\subsection{Confluent hypergeometric equation}
+Taking the second derivative of \(\chi \) gives
+\begin{equation}
+	\chi ^{\prime\prime} = e^{i\varepsilon x} \left[ (2i\varepsilon - x \varepsilon ^2) + (2 + 2 i \varepsilon x ) v^{\prime} + x v^{\prime\prime}   \right] 
+\end{equation}
+When plugging this into Eq. \eqref{deriv:final_equation}, we get
+\begin{equation}
+	x v^{\prime\prime} + (2 + 2 x i \varepsilon ) v^{\prime} + (1 + 2i \varepsilon ) v = 0,
+\end{equation}
+which can be brought in the standard confluent hypergeometric equation form by performing the substitution \(z \coloneqq - 2i \varepsilon x\). This gives
+\begin{equation}
+	\frac{\mathrm{d}}{\mathrm{d}x} = - 2 i \varepsilon \frac{\mathrm{d}}{\mathrm{d}z} 
+	\text{ and } 
+	\frac{\mathrm{d}^2}{\mathrm{d}x^2} = - 4 \varepsilon ^2 \frac{\mathrm{d}^2}{\mathrm{d}z^2} 
+\end{equation}
+and the equation turns into
+\begin{equation}\label{deriv:hypergeometric_equation}
+	z v^{\prime\prime} + (2-z) v^{\prime} - \left( 1- \frac{i}{2\varepsilon } \right) v = 0,
+\end{equation}
+which is the confluent hypergeometric equation with \(b=2\) and \(a=1- \frac{i}{2\varepsilon }\).
+The standard solution to Eq. \eqref{deriv:hypergeometric_equation} is a linear combination of Kummer's confluent hypergeometric function \(M(a,b,z)\) and Tricomi's confluent hypergeometric function \(U(a,b,z)\), however \(U(a,b,z)\) has a singularity at \(z=0\) and therefore does not appear in our solution. The solution to Eq. \eqref{deriv:final_equation} is
+\begin{equation}
+	\chi (x) = Cxe^{i\varepsilon x} M\left(1-\frac{i}{2\varepsilon }, 2, -2i\varepsilon x\right)
+\end{equation}
+All that's left to do is to determine the normalization constant \(C\) that satisfies the boundary condition set in Eq. \eqref{deriv:chi_asymptotic}. In order to do this, I'm going to use the asymptotic expansion of \(M(a,b,z)\) \cite{DLMF}:
+\begin{align}
+	M^{\infty} (a,b,z)&= 
+	\frac{\Gamma (b)}{\Gamma (a)} e^z z^{a-b} \sum_{n} \frac{(1-a)_n (b-a)_n}{n!}z^{-n} +\\
+	&+ \frac{\Gamma (b)}{\Gamma (b-a)}(-z)^{-a} \sum_{n} \frac{(a)_n(a-b+1)_n}{n!}(-z)^{-n},
+\end{align}
+where \((c)_n\) is the rising factorial. As \(z\) goes to infinity, all terms in the series vanish, apart from the \(n=0\) ones that yield \(1\). The expansion can therefore be rewritten as
+\begin{equation}\label{deriv:Mexpansion}
+	M^{\infty} (a,b,z) =
+	\frac{\Gamma (b)}{\Gamma (a)} e^z z^{a-b} +
+	\frac{\Gamma (b)}{\Gamma (b-a)}(-z)^{-a}
+\end{equation}
+If we insert our values for \(b\) and \(a\) into \(\Gamma (b-a)\), we get that
+\begin{equation}
+	\Gamma (b-a) = \Gamma \left( 2- 1 + \frac{i}{2\varepsilon } \right) = \Gamma \left( 1+ \frac{i}{2 \varepsilon } \right) = \Gamma (\overline{a})= \overline{\Gamma (a)}
+\end{equation}
+We can define \(\eta \) such that \(\Gamma (a) = \vert \Gamma (a) \vert e^{i \eta } \) and write the asymptotic expansion of \(\chi \) as
+\begin{align}
+	\chi^{\infty}(x) &= Cxe^{i\varepsilon x} \frac{\Gamma (b)}{\vert \Gamma (a) \vert }
+	\left( e^{-i \eta } e^z	z^{a-b} + e^{i \eta } (-z)^{-a}  \right) =\\
+	&= C x \frac{\Gamma (2)}{\Gamma \left(1-\frac{i}{2\varepsilon }\right)}\left( e^{-i \eta } e^{-i\varepsilon x}(-2i\varepsilon x)^{-1-\frac{i}{2\varepsilon }} + e^{i \eta } e^{i \varepsilon x} (2i \varepsilon x)^{-1+ \frac{i}{2\varepsilon }} \right)=\\
+	&=C \frac{e^{i \eta - \frac{\pi}{4 \varepsilon }}}{\Gamma \left( 1-\frac{i}{2\varepsilon } \right) \varepsilon } \sin \left( \varepsilon x + \frac{1}{2\varepsilon} \ln (2\varepsilon x) + \eta \right)
+\end{align}
+By noting that \(\varepsilon x= kr\) and that the logarithm has basically no impact at large \(x\), we conclude that the solution is in the form required by Eq. \eqref{deriv:chi_asymptotic} and that
+\begin{equation}
+	C = \frac{\Gamma \left( 1- \frac{i}{2\varepsilon }\right) \varepsilon }{e^{i \eta - \frac{\pi}{4 \varepsilon }}}
+\end{equation}
+We now have the solution we were looking for:
+\begin{equation}\label{deriv:solution}
+	\chi (x) = \frac{\Gamma \left(1-\frac{i}{2\varepsilon }\right) \varepsilon }{e^{i \eta - \frac{\pi}{4 \varepsilon }}}x e^{i\varepsilon x}M\left(1-\frac{i}{2\varepsilon },2,-2i \varepsilon x\right) 
+\end{equation}
+When taking the derivative at the origin, the only term that does not vanish is the one where \(x\)
