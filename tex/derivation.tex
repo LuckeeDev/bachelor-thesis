@@ -123,7 +123,22 @@ which has solutions \(p=l\) and \(p=-l-1\). The second solution is not physicall
 	\psi _k (0) = \frac{R_{k,l=0}(0)}{k} = \frac{\displaystyle\lim_{r \to 0} \frac{\chi_{k,l=0}}{r}}{k} = \frac{\chi_{k,l=0}^{\prime} (0)}{k}
 \end{equation}
 We are now only interested in finding \(\chi_{k,l=0}\), which I will now simply rename to \(\chi \), a task that can be accomplished by solving the radial equation Eq. \eqref{deriv:radial_chi} in the specific case of \(l=0\):
-\begin{equation}
+\begin{equation}\label{deriv:goal_equation}
 	-\frac{1}{2\mu } \frac{\mathrm{d}^2 \chi}{\mathrm{d}r^2} + V(r) \chi = \frac{k^2}{2\mu } \chi,
 \end{equation}
 with the boundary conditions that \(\chi (0) = 0\) and \(\chi (r) \to \sin (kr + \delta)\) as \(r \to \infty \) as imposed by Eq. \eqref{deriv:chi_asymptotic}.
+
+\subsection*{Radial equation solution in the Coulomb approximation}
+In the Coulomb approximation, \(m_{\phi }=0 \) and the Yukawa potential turns into a simple Coulomb potential:
+\begin{equation}\label{deriv:potential}
+	V(r)=-\frac{\alpha}{r}
+\end{equation}
+In order to simplify Eq. \eqref{deriv:goal_equation} with the potential in Eq. \eqref{deriv:potential}, I'm going to perform the following substitution: \(r \eqqcolon \frac{x}{2\alpha \mu } \), which leads to
+\begin{equation}
+	\frac{\mathrm{d}^2}{\mathrm{d}r^2} = 4 \alpha ^2 \mu ^2 \frac{\mathrm{d}^2}{\mathrm{d}x^2} \text{ and } V(x) = - \frac{2\alpha ^2\mu}{x} 
+\end{equation}
+Eq. \eqref{deriv:goal_equation} now assumes the simpler form
+\begin{equation}
+	- \chi^{\prime\prime} - \frac{1}{x} \chi = \varepsilon ^2 \chi,
+\end{equation}
+where the prime sign denotes derivation with respect to \(x\) and where I have defined \(\varepsilon \coloneqq \frac{v_{rel} }{2 \alpha }\).
