@@ -1,6 +1,6 @@
-\section*{Derivation}
+\chapter{Solving the equation}
 
-\subsection*{Reduction to one-dimensional problem}
+\section{Reduction to one-dimensional problem}
 
 The two-body problem involving the supposed new mediator \(\phi \) and the two identical Dark Matter particles can be expressed through the following non-relativistic Schrödinger equation:
 \begin{equation}
@@ -12,7 +12,7 @@ where \(m\) is the mass of the two identical Dark Matter particles, \(\Psi\) is 
 	\qquad
 	\nabla _2 = \frac{1}{2} \nabla _R - \nabla _r
 \end{equation}
-To do this, I will call \(x^i_1, x^i_2, X^i \) and \(x^i\) the coordinates of \(\vec{r}_1, \vec{r}_2, \vec{R} \) and \(\vec{R}\) respectively. By applying the chain rule,
+To do this, I will call \(x^i_1, x^i_2, X^i \) and \(x^i\) the coordinates of \(\vec{r}_1, \vec{r}_2, \vec{R} \) and \(\vec{r}\) respectively. By applying the chain rule,
 \begin{equation}
 	\frac{\partial }{\partial x^i_1} = \frac{\partial X^i}{\partial x^i_1} \frac{\partial }{\partial X^i} + \frac{\partial x^i}{\partial x^i_1} \frac{\partial }{\partial x^i} = \frac{1}{2} \frac{\partial }{\partial X^i} + \frac{\partial }{\partial x^i},
 \end{equation}
@@ -30,7 +30,7 @@ Energy is conserved, so we can write \(E_{CM} \) as the energy when the two part
 \end{equation}
 which is the standard description of a particle moving in a potential. To simplify the notation, I decide to drop the subscript r on the \(\nabla _r ^2\) operator. In the following, I might omit to specify the dependence of the potential and of the wavefunction on the position.
 
-\subsection*{Reduction to radial problem}
+\section{Reduction to radial problem}
 
 If there was no potential, a valid solution would be a simple plane wave traveling in the \(z\) direction:
 \begin{equation}
@@ -53,7 +53,7 @@ and the \(Y_m^l(\theta , \varphi )\) are the spherical harmonics. The incoming w
 	\psi _k = \sum_{l} A_l R_{kl} (r) P_l (\cos \theta )
 \end{equation}
 
-\subsubsection{Asymptotic behavior of \(R_{kl} \)}
+\subsection{Asymptotic behavior of the radial functions}
 In order to find the coefficients \(A_l\), we need to match the wavefunction expressed as a sum in Eq. \eqref{deriv:sum} to its asymptotic form in Eq. \eqref{deriv:asymptotic}. We now make the substitution \(R_{kl} \eqqcolon \chi_{kl} / r\) with the condition that \(\chi_{kl} (0)=0\) to prevent \(R_{kl} \) from blowing up at the origin, and Eq. \eqref{deriv:radial} reduces to
 \begin{equation}\label{deriv:radial_chi}
 	\left[- \frac{1}{2\mu }\frac{\mathrm{d}^2}{\mathrm{d}r^2} + \frac{l(l+1)}{2\mu r^2}+ V(r)\right]\chi_{kl} = \frac{k^2}{2\mu }\chi_{kl},
@@ -83,7 +83,7 @@ It can be shown \cite{cohen-tannoudji} that for an identically null potential \(
 \end{equation}
 where \(\delta _l\) is the phase shift caused by the introduction of the potential and where we have chosen \(A\) and \(B\) such that \(C=1\). The entire theory of scattering reduces to calculating the phase shift, but for the sake of this problem we will not need to do it.
 
-\subsubsection{Asymptotic behavior of the solution}
+\subsection{Asymptotic behavior of the solution}
 The exponential \(e^{ikz} \), which is the solution in the absence of a potential, can be expanded in terms of spherical Bessel functions and Legendre polynomials as follows \cite{cohen-tannoudji}:
 \begin{equation}
 	e^{ikz} = \sum_{l} i^l (2l+1) j_l(kr)P_l(\cos \theta )
@@ -97,7 +97,7 @@ We now need to understand how the solution behaves after introducing a potential
 	\psi_k \to \frac{1}{2ikr}\sum_{l} (2l+1)P_l(\cos \theta )\left[e^{i(kr+2\delta _l)}- (-1)^l e^{-ikr}  \right]
 \end{equation}
 
-\subsubsection{Determining the expansion coefficients}
+\subsection{Determining the expansion coefficients}
 We are now ready to determine the expansion coefficients \(A_l\). In order to do this, let us equate the asymptotic form of the solution in Eq. \eqref{deriv:sol_asymptotic} to the asymptotic form of Eq. \eqref{deriv:sum} by plugging in the result from Eq. \eqref{deriv:chi_asymptotic}:
 \begin{equation}
 	\sum_{l} \frac{(2l+1)}{2ikr} P_l(\cos \theta ) \left[e^{i(kr + 2 \delta _l)} - (-1)^{l} e^{-ikr} \right] \overset{!}{=} \frac{1}{r} \sum_{l} A_l P_l(\cos \theta ) \sin (kr-l \frac{\pi}{2} + \delta _l)
@@ -112,23 +112,26 @@ Corresponding terms in the series must be equal to each other, therefore
 	\psi _k = \frac{1}{k} \sum_{l} (2l+1)i^l e^{i \delta _l} P_l (\cos \theta ) R_{kl} (r) \label{deriv:expansion}
 \end{gather}
 
-\subsubsection{Sommerfeld enhancement factor}
-The Sommerfeld enhancement factor, previously defined as \(S_k = \vert \psi _k(0) \vert ^2 \), can now be easily calculated from the result in Eq. \eqref{deriv:expansion}. In order to do this, we are going to study the behavior of the radial functions \(R_{kl} \) around the origin by plugging the trial solution \(\chi_{kl} = r^{p+1} \) with the constraint that \(p\geq 0\) into Eq. \eqref{deriv:radial_chi} approximated around the origin. Indeed, if the potential doesn't blow up faster than \(1 / r\) as \(r \to 0\), we can neglect it when compared to the kinetic terms:
+\subsection{Sommerfeld enhancement factor}
+The Sommerfeld enhancement factor, previously defined as \(S_k = \vert \psi _k(0) \vert ^2 \), can now be easily calculated from the result in Eq. \eqref{deriv:expansion}. In order to do this, we are going to study the behavior of the radial functions \(R_{kl} \) around the origin by plugging the trial solution \(\chi_{kl} = r^{p+1} \) with the constraint that \(p\geq 0\) into Eq. \eqref{deriv:radial_chi} approximated around the origin. Indeed, if the potential doesn't blow up faster than \(1 / r\) as \(r \to 0\), we can neglect it when compared to the kinetic terms and get:
 \begin{gather}
 	\frac{\mathrm{d}^2}{\mathrm{d}r^2} r^{p+1} \simeq \frac{l(l+1)}{r^2}r^{p+1} \text{ as } r \to 0 \\
 	\implies p(p+1)=l(l+1),
 \end{gather}
 which has solutions \(p=l\) and \(p=-l-1\). The second solution is not physically acceptable as it would make \(R_{kl} \) blow up at the origin, therefore \(R_{kl} \simeq r^l \) as \(r \to 0\). This means that the only term in the series that doesn't vanish at \(r=0\) is the one with \(l=0\), and that
 \begin{equation}
-	\psi _k (0) = \frac{R_{k,l=0}(0)}{k} = \frac{\displaystyle\lim_{r \to 0} \frac{\chi_{k,l=0}}{r}}{k} = \frac{\chi_{k,l=0}^{\prime} (0)}{k}
+	S_k=\vert \psi _k (0) \vert ^2 
+	= \left\vert \frac{R_{k,l=0}(0)}{k} \right\vert ^2 
+	= \left\vert \frac{1}{k}\lim_{r \to 0} \frac{\chi_{k,l=0}}{r} \right\vert ^2
+	= \left\vert \frac{1}{k}\frac{\mathrm{d}\chi_{k,l=0}}{\mathrm{d}r} (0) \right\vert ^2
 \end{equation}
 We are now only interested in finding \(\chi_{k,l=0}\), which I will now simply rename to \(\chi \), a task that can be accomplished by solving the radial equation Eq. \eqref{deriv:radial_chi} in the specific case of \(l=0\):
 \begin{equation}\label{deriv:goal_equation}
 	-\frac{1}{2\mu } \frac{\mathrm{d}^2 \chi}{\mathrm{d}r^2} + V(r) \chi = \frac{k^2}{2\mu } \chi,
 \end{equation}
-with the boundary conditions that \(\chi (0) = 0\) and \(\chi (r) \to \sin (kr + \delta)\) as \(r \to \infty \) as imposed by Eq. \eqref{deriv:chi_asymptotic}.
+with the boundary conditions that \(\chi (0) \to  0\) as \(r \to 0\) and that \(\chi (r) \to \sin (kr + \delta)\) as \(r \to \infty \) as imposed by Eq. \eqref{deriv:chi_asymptotic}.
 
-\subsection*{Radial equation solution in the Coulomb approximation}
+\section{Radial equation solution}
 In the Coulomb approximation, \(m_{\phi }=0 \) and the Yukawa potential turns into a simple Coulomb potential:
 \begin{equation}\label{deriv:potential}
 	V(r)=-\frac{\alpha}{r}
@@ -141,4 +144,7 @@ Eq. \eqref{deriv:goal_equation} now assumes the simpler form
 \begin{equation}
 	- \chi^{\prime\prime} - \frac{1}{x} \chi = \varepsilon ^2 \chi,
 \end{equation}
-where the prime sign denotes derivation with respect to \(x\) and where I have defined \(\varepsilon \coloneqq \frac{v_{rel} }{2 \alpha }\).
+where the prime sign denotes derivation with respect to \(x\) and where I have defined \(\varepsilon \coloneqq \frac{v_{rel} }{2 \alpha }\). With these new variables, the Sommerfeld enhancement factor assumes the following form:
+\begin{equation}
+	S_{\varepsilon } = \left\vert \frac{1}{\varepsilon } \frac{\mathrm{d}\chi }{\mathrm{d}x} (0) \right\vert^2
+\end{equation}
