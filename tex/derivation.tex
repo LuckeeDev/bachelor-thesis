@@ -158,7 +158,7 @@ Its solution is an exponential, \(\chi (x) \simeq e^{i \varepsilon x}\) as \(x \
 \begin{equation}
 	\chi ^{\prime\prime} \simeq - \frac{1}{x} \chi \text{ as } x \to 0
 \end{equation}
-The solution to this second equation is not as straightforward as the first one, but it can be solved by substituting \(t^2\coloneqq x\) and expressing it as a Bessel equation. This leads to a solution that looks like
+The solution to this second equation is not as straightforward as the first one, but it can be solved by substituting \(t^2\coloneqq x\) and expressing it as a Bessel equation. This leads to a solution of the form
 % TODO: should I do this explicitly? Or should I mention that I used Mathematica?
 \begin{equation}
 	\chi (x) \underset{x \to 0}{\simeq} C_1 \sqrt{x} J_1 (2 \sqrt{x} ) + C_2 \sqrt{x} Y_1(2 \sqrt{x} ),
@@ -178,7 +178,7 @@ When plugging this into Eq. \eqref{deriv:final_equation}, we get
 \begin{equation}
 	x v^{\prime\prime} + (2 + 2 x i \varepsilon ) v^{\prime} + (1 + 2i \varepsilon ) v = 0,
 \end{equation}
-which can be brought in the standard confluent hypergeometric equation form by performing the substitution \(z \coloneqq - 2i \varepsilon x\). This gives
+which can be brought into the standard confluent hypergeometric equation form by performing the substitution \(z \coloneqq - 2i \varepsilon x\). This gives
 \begin{equation}
 	\frac{\mathrm{d}}{\mathrm{d}x} = - 2 i \varepsilon \frac{\mathrm{d}}{\mathrm{d}z} 
 	\text{ and } 
@@ -189,7 +189,7 @@ and the equation turns into
 	z v^{\prime\prime} + (2-z) v^{\prime} - \left( 1- \frac{i}{2\varepsilon } \right) v = 0,
 \end{equation}
 which is the confluent hypergeometric equation with \(b=2\) and \(a=1- \frac{i}{2\varepsilon }\).
-The standard solution to Eq. \eqref{deriv:hypergeometric_equation} is a linear combination of Kummer's confluent hypergeometric function \(M(a,b,z)\) and Tricomi's confluent hypergeometric function \(U(a,b,z)\), however \(U(a,b,z)\) has a singularity at \(z=0\) and therefore does not appear in our solution. The solution to Eq. \eqref{deriv:final_equation} is
+The standard solution to Eq. \eqref{deriv:hypergeometric_equation} is a linear combination of Kummer's confluent hypergeometric function \(M(a,b,z)\) and Tricomi's confluent hypergeometric function \(U(a,b,z)\), however \(U(a,b,z)\) has a singularity at \(z=0\) and therefore must be excluded from our solution. The solution to Eq. \eqref{deriv:final_equation} is
 \begin{equation}
 	\chi (x) = Cxe^{i\varepsilon x} M\left(1-\frac{i}{2\varepsilon }, 2, -2i\varepsilon x\right)
 \end{equation}
@@ -213,7 +213,7 @@ We can define \(\eta \) such that \(\Gamma (a) = \vert \Gamma (a) \vert e^{i \et
 \begin{align}
 	\chi^{\infty}(x) &= Cxe^{i\varepsilon x} \frac{\Gamma (b)}{\vert \Gamma (a) \vert }
 	\left( e^{-i \eta } e^z	z^{a-b} + e^{i \eta } (-z)^{-a}  \right) =\\
-	&= C x \frac{\Gamma (2)}{\Gamma \left(1-\frac{i}{2\varepsilon }\right)}\left( e^{-i \eta } e^{-i\varepsilon x}(-2i\varepsilon x)^{-1-\frac{i}{2\varepsilon }} + e^{i \eta } e^{i \varepsilon x} (2i \varepsilon x)^{-1+ \frac{i}{2\varepsilon }} \right)=\\
+	&= C x \frac{\Gamma (2) e^{i \eta }}{\Gamma \left(1-\frac{i}{2\varepsilon }\right)}\left( e^{-i \eta } e^{-i\varepsilon x}(-2i\varepsilon x)^{-1-\frac{i}{2\varepsilon }} + e^{i \eta } e^{i \varepsilon x} (2i \varepsilon x)^{-1+ \frac{i}{2\varepsilon }} \right)=\\
 	&=C \frac{e^{i \eta - \frac{\pi}{4 \varepsilon }}}{\Gamma \left( 1-\frac{i}{2\varepsilon } \right) \varepsilon } \sin \left( \varepsilon x + \frac{1}{2\varepsilon} \ln (2\varepsilon x) + \eta \right)
 \end{align}
 By noting that \(\varepsilon x= kr\) and that the logarithm has basically no impact at large \(x\), we conclude that the solution is in the form required by Eq. \eqref{deriv:chi_asymptotic} and that
@@ -224,4 +224,18 @@ We now have the solution we were looking for:
 \begin{equation}\label{deriv:solution}
 	\chi (x) = \frac{\Gamma \left(1-\frac{i}{2\varepsilon }\right) \varepsilon }{e^{i \eta - \frac{\pi}{4 \varepsilon }}}x e^{i\varepsilon x}M\left(1-\frac{i}{2\varepsilon },2,-2i \varepsilon x\right) 
 \end{equation}
-When taking the derivative at the origin, the only term that does not vanish is the one where \(x\)
+When taking the derivative at the origin, the only term that does not vanish is the one where we take the derivative of \(x \), leaving the exponential and the confluent hypergeometric function (which when evaluated at \(x=0\) yield \(1\)):
+\begin{align}
+	\frac{\mathrm{d}\chi }{\mathrm{d}x} (x=0) &=
+	\left.
+		\frac{\Gamma \left( 1- \frac{i}{2\varepsilon } \right) \varepsilon }{e^{i \eta -\frac{\pi}{4\varepsilon }}} e^{i\varepsilon x} M\left(1-\frac{i}{2\varepsilon },2,-2 i \varepsilon x\right)
+	\right\vert _{x=0} \\
+	&= \frac{\Gamma \left( 1- \frac{i}{2\varepsilon }\right) \varepsilon }{e^{i \eta - \frac{\pi}{4\varepsilon }}}
+\end{align}
+The Sommerfeld enhancement factor is thus
+\begin{align}
+	S_{\varepsilon } &= \left\vert \Gamma \left(1-\frac{i}{2\varepsilon }\right) e^{-i \eta + \frac{\pi}{4\varepsilon }} \right\vert ^2=\left\vert \Gamma \left(1-\frac{i}{2\varepsilon }\right)\right\vert ^2 e^{\frac{\pi}{2\varepsilon }}=\label{deriv:sef_gamma}\\
+	&= \frac{\frac{\pi}{2\varepsilon }}{\sinh \left( \frac{\pi }{2 \varepsilon } \right)}e^{\frac{\pi}{2\varepsilon }} = \frac{\frac{\pi}{\varepsilon }}{1- e^{-\frac{\pi}{\varepsilon }}}=\label{deriv:sef_sinh}\\
+	&= 2\pi \frac{\alpha}{v_{rel} } \frac{1}{1- e^{-2\pi \frac{\alpha}{v_{rel} }}},
+\end{align}
+where I have used Euler's reflection formula \(\Gamma (z) \Gamma (1-z) = \frac{\pi}{\sin(\pi z)}\), the Gamma function recurrence relation \(\Gamma (z+1)=z \Gamma (z)\) and the identity \(\sin (ix)=i \sinh (x)\) to prove the step between Eq. \eqref{deriv:sef_gamma} and Eq. \eqref{deriv:sef_sinh}.
