@@ -7,3 +7,5 @@
 *.pdf
 *.out
 *.toc
+*.bbl
+*.blg
