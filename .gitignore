@@ -5,6 +5,7 @@
 *.log
 *.synctex.gz
 *.pdf
+!tex/images/*.pdf
 *.out
 *.toc
 *.bbl
