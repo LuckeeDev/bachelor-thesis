@@ -1,12 +1,13 @@
-\chapter{Solving the equation}
-
-\section{Reduction to one-dimensional problem}
-
+\chapter{Solving the equation}\label{chap:derivation}
 The two-body problem involving the supposed new mediator \(\phi \) and the two identical Dark Matter particles can be expressed through the following non-relativistic Schrödinger equation:
 \begin{equation}
 	-\frac{1}{2m} \nabla_1 ^2 \Psi(\vec{r}_1,\vec{r}_2)  - \frac{1}{2m} \nabla_2 ^2 \Psi(\vec{r}_1,\vec{r}_2)  + V(\vert \vec{r}_1 - \vec{r}_2 \vert ) \Psi(\vec{r}_1,\vec{r}_2) =E \Psi (\vec{r}_1,\vec{r}_2),
 \end{equation}
-where \(m\) is the mass of the two identical Dark Matter particles, \(\Psi\) is the wavefunction of the system, \(V\) is the potential describing the interaction mediated by \(\phi \) and \(E\) is the total energy of the system. The first step to solving this equation is to rewrite it as a one-body problem in the centre-of-mass frame through the following substitutions: \(\vec{r} \coloneqq  \vec{r}_1 - \vec{r}_2\), which represents the distance between the two particles, and \(\vec{R} \coloneqq (\vec{r}_1 + \vec{r}_2) / 2\), which is the position of the centre-of-mass. Since the two particles have the same mass, the reduced mass \(\mu \) is just \(\mu = m / 2\). One can easily show that the following relations hold:
+where \(m\) is the mass of the two identical Dark Matter particles, \(\Psi\) is the wavefunction of the system, \(V\) is the potential describing the interaction mediated by \(\phi \) and \(E\) is the total energy of the system. 
+
+\section{Reduction to one-dimensional problem}
+
+The first step to solving this equation is to rewrite it as a one-body problem in the centre-of-mass frame through the following substitutions: \(\vec{r} \coloneqq  \vec{r}_1 - \vec{r}_2\), which represents the distance between the two particles, and \(\vec{R} \coloneqq (\vec{r}_1 + \vec{r}_2) / 2\), which is the position of the centre-of-mass. Since the two particles have the same mass, the reduced mass \(\mu \) is just \(\mu = m / 2\). One can easily show that the following relations hold:
 \begin{equation}
 	\nabla _1 = \frac{1}{2} \nabla _R + \nabla _r
 	\qquad
@@ -236,6 +237,6 @@ The Sommerfeld enhancement factor is thus
 \begin{align}
 	S_{\varepsilon } &= \left\vert \Gamma \left(1-\frac{i}{2\varepsilon }\right) e^{-i \eta + \frac{\pi}{4\varepsilon }} \right\vert ^2=\left\vert \Gamma \left(1-\frac{i}{2\varepsilon }\right)\right\vert ^2 e^{\frac{\pi}{2\varepsilon }}=\label{deriv:sef_gamma}\\
 	&= \frac{\frac{\pi}{2\varepsilon }}{\sinh \left( \frac{\pi }{2 \varepsilon } \right)}e^{\frac{\pi}{2\varepsilon }} = \frac{\frac{\pi}{\varepsilon }}{1- e^{-\frac{\pi}{\varepsilon }}}=\label{deriv:sef_sinh}\\
-	&= 2\pi \frac{\alpha}{v_{rel} } \frac{1}{1- e^{-2\pi \frac{\alpha}{v_{rel} }}},
+	&= 2\pi \frac{\alpha}{v_{rel} } \frac{1}{1- e^{-2\pi \frac{\alpha}{v_{rel} }}}\label{deriv:result},
 \end{align}
 where I have used Euler's reflection formula \(\Gamma (z) \Gamma (1-z) = \frac{\pi}{\sin(\pi z)}\), the Gamma function recurrence relation \(\Gamma (z+1)=z \Gamma (z)\) and the identity \(\sin (ix)=i \sinh (x)\) to prove the step between Eq. \eqref{deriv:sef_gamma} and Eq. \eqref{deriv:sef_sinh}.

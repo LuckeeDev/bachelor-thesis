@@ -5,6 +5,13 @@
 \usepackage{hyperref}
 \usepackage{mathtools}
 \usepackage{csquotes}
+\usepackage[toc,page]{appendix}
+
+\usepackage{tikz}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usetikzlibrary{patterns}
+
+\graphicspath{ {./images} }
 
 \usepackage[
     backend=biber,
@@ -19,7 +26,7 @@
 \textwidth=450pt\oddsidemargin=0pt
 
 \DeclareFieldFormat{eprint:arxiv}{%
-  \mkbibbrackets{\href{https://arxiv.org/abs/#1}{#1}}%
+  \mkbibbrackets{\href{https://arxiv.org/abs/#1}{\texttt{#1}}}%
 }
 
 \DeclareFieldFormat
@@ -35,6 +42,8 @@
 \include{derivation.tex}
 
 \include{implications.tex}
+
+\include{appendix.tex}
 
 \printbibliography
 \end{document}
