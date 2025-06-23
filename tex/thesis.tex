@@ -4,9 +4,27 @@
 \usepackage{color}
 \usepackage{hyperref}
 \usepackage{mathtools}
-\usepackage{cite}
+\usepackage{csquotes}
+
+\usepackage[
+    backend=biber,
+    style=phys,
+    articletitle=true,
+    biblabel=brackets,
+    chaptertitle=true,
+    eprint=true
+]{biblatex}
+\addbibresource{bibliography.bib}
 
 \textwidth=450pt\oddsidemargin=0pt
+
+\DeclareFieldFormat{eprint:arxiv}{%
+  \mkbibbrackets{\href{https://arxiv.org/abs/#1}{#1}}%
+}
+
+\DeclareFieldFormat
+  [article,inproceedings,incollection,unpublished]
+  {title}{\mkbibemph{#1}}
 
 \begin{document}
 
@@ -16,7 +34,7 @@
 
 \include{derivation.tex}
 
-\bibliography{bibliography.bib}
-\bibliographystyle{unsrt}
+\include{implications.tex}
 
+\printbibliography
 \end{document}
