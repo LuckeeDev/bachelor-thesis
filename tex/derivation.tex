@@ -98,7 +98,7 @@ Corresponding terms in the series must be equal to each other, therefore
 \end{gather}
 
 \subsection{Sommerfeld enhancement factor}
-The Sommerfeld enhancement factor, previously defined as \(S_k = \vert \psi _k(0) \vert ^2 \), can now be easily calculated from the result in Eq. \eqref{deriv:expansion}. In order to do this, we are going to study the behavior of the radial functions \(R_{kl} \) around the origin by plugging the trial solution \(\chi_{kl} = r^{p+1} \) with the constraint that \(p\geq 0\) into Eq. \eqref{deriv:radial_chi} approximated around the origin. Indeed, if the potential doesn't blow up faster than \(1 / r\) as \(r \to 0\), we can neglect it when compared to the kinetic terms and get:
+The Sommerfeld enhancement factor, defined in Eq. \eqref{eq:sommerfeld_def}, can now be easily calculated from the result in Eq. \eqref{deriv:expansion} and by considering that \(\vert \psi_k^{(0)}(0) \vert^2=1 \). In order to do this, we are going to study the behavior of the radial functions \(R_{kl} \) around the origin by plugging the trial solution \(\chi_{kl} = r^{p+1} \) with the constraint that \(p\geq 0\) into Eq. \eqref{deriv:radial_chi} approximated around the origin. Indeed, if the potential doesn't blow up faster than \(1 / r\) as \(r \to 0\), we can neglect it when compared to the kinetic terms and get:
 \begin{gather}
 	\frac{\mathrm{d}^2}{\mathrm{d}r^2} r^{p+1} \simeq \frac{l(l+1)}{r^2}r^{p+1} \text{ as } r \to 0 \\
 	\implies p(p+1)=l(l+1),
@@ -122,17 +122,15 @@ In the Coulomb approximation, \(m_{\phi }=0 \) and the Yukawa potential turns in
 	V(r)=-\frac{\alpha}{r}
 \end{equation}
 In order to simplify Eq. \eqref{deriv:goal_equation} with the potential in Eq. \eqref{deriv:potential}, I'm going to perform the following substitution: \(r \eqqcolon \frac{x}{2\alpha \mu } \), which leads to
-\begin{equation}
-	\frac{\mathrm{d}^2}{\mathrm{d}r^2} = 4 \alpha ^2 \mu ^2 \frac{\mathrm{d}^2}{\mathrm{d}x^2} \text{ and } V(x) = - \frac{2\alpha ^2\mu}{x} 
-\end{equation}
-Eq. \eqref{deriv:goal_equation} now assumes the simpler form
-\begin{equation}\label{deriv:final_equation}
-	- \chi^{\prime\prime} - \frac{1}{x} \chi = \varepsilon ^2 \chi,
-\end{equation}
-where the prime sign denotes derivation with respect to \(x\) and where I have defined \(\varepsilon \coloneqq \frac{v_{rel} }{2 \alpha }\). With these new variables, the Sommerfeld enhancement factor assumes the following form:
+\begin{gather}
+	\frac{\mathrm{d}^2}{\mathrm{d}r^2} = 4 \alpha ^2 \mu ^2 \frac{\mathrm{d}^2}{\mathrm{d}x^2} \text{ and } V(x) = - \frac{2\alpha ^2\mu}{x} \\
+	\implies - \chi^{\prime\prime} - \frac{1}{x} \chi = \varepsilon ^2 \chi, \label{deriv:final_equation}
+\end{gather}
+where the prime sign denotes derivation with respect to \(x\) and where I have defined \(\varepsilon \coloneqq \frac{v_{rel} }{2 \alpha }\). The Sommerfeld enhancement factor now assumes the following form:
 \begin{equation}
 	S_{\varepsilon } = \left\vert \frac{1}{\varepsilon } \frac{\mathrm{d}\chi }{\mathrm{d}x} (0) \right\vert^2
 \end{equation}
+The rest of the solution follows the outline of the work by Hannestad and Thomas in \cite{Hannestad_2011}.
 
 \subsection{Solution ansatz}
 In order to guess what the solution to this equation might look like, I'm going to study the asymptotic behavior of the equation at the origin and at infinity. At infinity, the \(1 / x\) term can be neglected compared to the \(\varepsilon ^2\) term and the equation is just

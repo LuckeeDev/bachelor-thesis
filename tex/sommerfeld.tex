@@ -1,1 +1,22 @@
 \chapter{Sommerfeld enhancement}
+
+Initially studied by Sommerfeld in 1931 \cite{Sommerfeld_1931}, the Sommerfeld enhancement is an effect arising in non-relativistic quantum mechanics where the introduction of a long-range potential greatly affects the cross-section of a process happening locally at the origin.
+
+One can easily picture the effect by making an analogy with classical mechanics. Consider an object traveling with velocity \(v\) towards a star of radius \(R\) and mass \(M\): if we neglect gravity, the cross-section for falling into the star is simply the area occupied by the star \(\sigma _0=\pi R^2\). However, if we consider gravity, the cross-section increases because the object can be dragged from further out into the star. This means that the cross-section is actually \(\sigma = \pi b_{max}^2 \), where \(b_{max}\) is the largest the impact parameter can be for the distance of closest approach to be \(R\) \cite{Arkani_2009, Cirelli_2024}. We can determine the enhancement factor by imposing conservation of energy and angular momentum, and get
+\begin{equation}
+	\sigma = \sigma _0 \left( 1+ \frac{v_{esc} ^2}{v ^2} \right), 
+\end{equation}
+where \(v_{esc} ^2 = 2GM / R\) is the escape velocity from the surface of the star. The cross-section can thus be greatly enhanced at velocities \(v \ll v_{esc} \).
+
+In quantum mechanics, something similar can happen with the introduction of a long-range potential. Consider, for instance, an annihilation happening locally at the origin thanks to a Hamiltonian of the type \(H_{ann} = U_{ann} \delta (\vec{r})\). The rate of the process will be proportional to the squared modulus of the wavefunction at the origin \(\vert \psi ^{(0)}(0) \vert^2 \). If we introduce a potential, the original wavefunction will get distorted and will have a different value at the origin, now making the rate proportional to \(\vert \psi (0) \vert^2 \). The Sommerfeld enhancement factor is defined as the ratio between the two cross-sections, and therefore between the squared moduli of the wavefunctions:
+\begin{equation}\label{eq:sommerfeld_def}
+	S = \frac{\sigma }{\sigma _0} = \frac{\vert \psi (0) \vert ^2}{\vert \psi ^{0}(0) \vert ^2}
+\end{equation}
+
+Although dark matter does not interact electromagnetically and gravity is irrelevant at these scales, Sommerfeld enhancement can be extremely relevant for dark matter theory in the hypothesis that the dark matter particles couple to an attractive force carrier with Compton wavelength longer than \((\alpha M_{DM})^{-1} \), where \(\alpha\) is the strength of the interaction and \(M_{DM} \) is the mass of the dark matter particle. In other words, we're referring to a light force carrier \(\phi \) with mass \(m_{\phi } \lesssim \alpha M_{DM} \). This light force carrier could be the mediator of a yet unknown ``dark interaction'': this claim exists in several theories of physics beyond the standard model \cite{Arkani_2009}.
+
+Since the mediator is expected to be massive, the most natural way to model the long-range interaction would be a classic Yukawa potential:
+\begin{equation}
+	V(r) = -\frac{\alpha }{r} e^{-m_{\phi } r}
+\end{equation}
+However, if the 
