@@ -27,13 +27,30 @@
 
 \textwidth=450pt\oddsidemargin=0pt
 
+% Enable arXiv linking
 \DeclareFieldFormat{eprint:arxiv}{%
-  \mkbibbrackets{\href{https://arxiv.org/abs/#1}{\texttt{#1}}}%
+  \mkbibbrackets{\href{https://arxiv.org/abs/#1}{\nolinkurl{#1}}}%
 }
 
+% Italics title
 \DeclareFieldFormat
   [article,inproceedings,incollection,unpublished]
   {title}{\mkbibemph{#1}}
+
+% Italics title and enable link-title keyword
+\DeclareFieldFormat{title}{%
+  \ifkeyword{link-title}
+    {\iffieldundef{url}
+      {\mkbibemph{#1}}
+      {\mkbibemph{\href{\thefield{url}}{#1}}}}
+    {\mkbibemph{#1}}}
+
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{%
+  \ifkeyword{link-title}
+    {\iffieldundef{url}
+      {\mkbibemph{#1\isdot}}
+      {\mkbibemph{\href{\thefield{url}}{#1}\isdot}}}
+    {\mkbibemph{#1\isdot}}}
 
 \begin{document}
 
@@ -46,8 +63,6 @@
 \tableofcontents
 
 \include{introduction.tex}
-
-\include{sommerfeld.tex}
 
 \include{derivation.tex}
 

@@ -1,3 +1,38 @@
 \chapter{Introduction}
 
+\section{Structure of the thesis}
+
 The goal is to apply \cite{Arkani_2009} and see the experimental implications on \cite{Profumo_2018}.
+
+\section{Sommerfeld enhancement}
+
+Initially studied by Sommerfeld in 1931 \cite{Sommerfeld_1931}, the Sommerfeld enhancement is an effect arising in non-relativistic quantum mechanics where the introduction of a long-range potential affects the cross-section of a process happening locally at the origin.
+
+One can easily picture the effect by making an analogy with classical mechanics. Consider an object traveling with velocity \(v\) towards a star of radius \(R\) and mass \(M\): if we neglect gravity, the cross-section for falling into the star is simply the area occupied by the star \(\sigma _0=\pi R^2\). However, if we consider gravity, the cross-section increases because the object can be dragged from further away into the star. This means that the cross-section is actually \(\sigma = \pi b_{max}^2 \), where \(b_{max}\) is the largest the impact parameter can be for the distance of closest approach of the orbit to be \(R\) \cite{Arkani_2009, Cirelli_2024}. We can determine the enhancement factor by imposing conservation of energy and angular momentum, and get
+\begin{equation}
+	\sigma = \sigma _0 \left( 1+ \frac{v_{esc} ^2}{v ^2} \right), 
+\end{equation}
+where \(v_{esc} ^2 = 2GM / R\) is the escape velocity from the surface of the star. The cross-section can thus be greatly enhanced at velocities \(v \ll v_{esc} \).
+
+In quantum mechanics, something similar can happen with the introduction of a long-range potential. Consider, for instance, an annihilation happening locally at the origin thanks to a Hamiltonian of the type \(H_{ann} = U_{ann} \delta (\vec{r})\). The rate of the process will be proportional to the squared modulus of the wavefunction at the origin \(\vert \psi ^{(0)}(0) \vert^2 \). If we introduce a potential, the original wavefunction will get distorted and will have a different value at the origin, now making the rate proportional to \(\vert \psi (0) \vert^2 \). The Sommerfeld enhancement factor is defined as the ratio between the two cross-sections, and therefore between the squared moduli of the wavefunctions:
+\begin{equation}\label{eq:sommerfeld_def}
+	S = \frac{\sigma }{\sigma _0} = \frac{\vert \psi (0) \vert ^2}{\vert \psi ^{(0)}(0) \vert ^2}
+\end{equation}
+
+Although dark matter does not interact electromagnetically and gravity is irrelevant at these scales, Sommerfeld enhancement can be extremely relevant for dark matter theory in the hypothesis that the dark matter particles couple to an attractive force carrier with Compton wavelength longer than \((\alpha M_{DM})^{-1} \), where \(\alpha\) is the strength of the interaction and \(M_{DM} \) is the mass of the dark matter particle. In other words, we're referring to a light force carrier \(\phi \) with mass \(m_{\phi } \lesssim \alpha M_{DM} \). This light force carrier could be the mediator of a yet unknown ``dark interaction'': this claim exists in several theories of physics beyond the standard model \cite{Arkani_2009}.
+
+Since the mediator is expected to be massive, the most natural way to model the long-range interaction would be a classic Yukawa potential:
+\begin{equation}
+	V(r) = -\frac{\alpha }{r} e^{-m_{\phi } r}
+\end{equation}
+However, in the limit of a massless mediator, the potential tends to a simple Coulomb potential and the associated Schrödinger equation admits an analytic solution. Intuitively, one can make the approximation of a massless mediator, and thus an infinite-range force, when the range of the force is larger than the De Broglie wavelength of the system \((\mu v_{rel})^{-1} \), where \(\mu \) is the reduced mass and \(v_{rel} \) is the relative velocity of the two particles \cite{Sala_2019}. This translates into the following constraint for two particles with identical mass \(M_{DM} \):
+\begin{equation}
+	\frac{M_{DM} v_{rel} }{2m_{\phi } }\geq 1
+\end{equation}
+If the Coulomb approximation is not valid, one should instead use the Yukawa potential and solve the equation numerically, or else approximate it with the Hulthen potential to be able to solve the problem analytically:
+\begin{equation}\label{eq:Coulomb_approx}
+	V_H(r) = \frac{\alpha \kappa m_{\phi } e^{-\kappa m_{\phi }r }}{1- e^{-\kappa m_{\phi }r }},
+\end{equation}
+where the approximation is most accurate for \(\kappa \thickapprox 1.74\) \cite{Cirelli_2024}. In the following, I will always assume a massless mediator, and I will later check if it was indeed a good approximation.
+
+One more reason for being interested in Sommerfeld enhancement is that, as we will see in the following, it is velocity-dependent, and therefore allows for different cross-sections at freeze-out and today. In particular, it allows higher cross-sections today compared to the one that is required to give the correct dark matter thermal relic abundance (\(\langle \sigma v \rangle_{relic}=4.4\times 10^{-26} \mathrm{cm^3 s^{-1}}\) for non-self-conjugate dark matter).
