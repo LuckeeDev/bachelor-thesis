@@ -1,27 +1,11 @@
 \chapter{Solving the equation}\label{chap:derivation}
 The two-body problem involving the supposed new mediator \(\phi \) and the two identical Dark Matter particles can be expressed through the following non-relativistic Schrödinger equation:
-\begin{equation}
+\begin{equation}\label{deriv:initial_equation}
 	-\frac{1}{2m} \nabla_1 ^2 \Psi(\vec{r}_1,\vec{r}_2)  - \frac{1}{2m} \nabla_2 ^2 \Psi(\vec{r}_1,\vec{r}_2)  + V(\vert \vec{r}_1 - \vec{r}_2 \vert ) \Psi(\vec{r}_1,\vec{r}_2) =E \Psi (\vec{r}_1,\vec{r}_2),
 \end{equation}
-where \(m\) is the mass of the two identical Dark Matter particles, \(\Psi\) is the wavefunction of the system, \(V\) is the potential describing the interaction mediated by \(\phi \) and \(E\) is the total energy of the system. 
+where \(m\) is the mass of the two identical Dark Matter particles, \(\Psi\) is the wavefunction of the system, \(V\) is the potential describing the interaction mediated by \(\phi \) and \(E\) is the total energy of the system.
 
-\section{Reduction to one-dimensional problem}
-
-The first step to solving this equation is to rewrite it as a one-body problem in the centre-of-mass frame through the following substitutions: \(\vec{r} \coloneqq  \vec{r}_1 - \vec{r}_2\), which represents the distance between the two particles, and \(\vec{R} \coloneqq (\vec{r}_1 + \vec{r}_2) / 2\), which is the position of the centre-of-mass. Since the two particles have the same mass, the reduced mass \(\mu \) is just \(\mu = m / 2\). One can easily show that the following relations hold:
-\begin{equation}
-	\nabla _1 = \frac{1}{2} \nabla _R + \nabla _r
-	\qquad
-	\nabla _2 = \frac{1}{2} \nabla _R - \nabla _r
-\end{equation}
-To do this, I will call \(x^i_1, x^i_2, X^i \) and \(x^i\) the coordinates of \(\vec{r}_1, \vec{r}_2, \vec{R} \) and \(\vec{r}\) respectively. By applying the chain rule,
-\begin{equation}
-	\frac{\partial }{\partial x^i_1} = \frac{\partial X^i}{\partial x^i_1} \frac{\partial }{\partial X^i} + \frac{\partial x^i}{\partial x^i_1} \frac{\partial }{\partial x^i} = \frac{1}{2} \frac{\partial }{\partial X^i} + \frac{\partial }{\partial x^i},
-\end{equation}
-and a similar result can be obtained for the second particle. With this result, the equation turns into a simpler form:
-\begin{equation}
-	\left[- \frac{1}{8\mu} \nabla _R^{2} - \frac{1}{2\mu } \nabla _r^2 + V(r)\right] \Psi (\vec{R},\vec{r})= E \Psi (\vec{R},\vec{r})
-\end{equation}
-This equation clearly suggests that the wavefunction can be separated into the product of a function describing the centre of mass and another one describing the system as seen from the centre-of-mass frame: \(\Psi (\vec{R},\vec{r}) = \psi_R \psi _r\). The problem can therefore be studied as two separate problems, and for the sake of this derivation we will only focus on the centre-of-mass description of it. The centre-of-mass Schrödinger equation is
+The first step to solving this equation is to rewrite it as a one-body problem in the centre-of-mass frame through the following substitutions: \(\vec{r} \coloneqq  \vec{r}_1 - \vec{r}_2\), which represents the distance between the two particles, and \(\vec{R} \coloneqq (\vec{r}_1 + \vec{r}_2) / 2\), which is the position of the centre-of-mass. Since the two particles have the same mass, the reduced mass \(\mu \) is just \(\mu = m / 2\). The centre-of-mass Schrödinger becomes (see Appendix \ref{appendix:onebody})
 \begin{equation}
 	\left[- \frac{1}{2\mu }\nabla _r^2 + V(r)\right]\psi _r = E_{CM} \psi _r
 \end{equation}

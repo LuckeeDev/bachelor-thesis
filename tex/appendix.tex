@@ -1,3 +1,62 @@
 \begin{appendices}
-\chapter{Reduction to one-dimensional problem}\label{appendix:1d}
+\chapter{Reduction to one-body problem}\label{appendix:onebody}
+Separating a two-body problem into two separate problems concerning the centre of mass and the relative motion of the two particles is a useful technique that has been applied in this work.
+
+\paragraph{The Schrödinger equation}
+If the two particles have the same mass \(m\), the reduced mass is just \(\mu = m /2\) and the transformation can be carried out via the following substitutions:
+\begin{equation}\label{eq:twobody_transform}
+	\vec{r}\coloneqq \vec{r}_1 - \vec{r}_2 \qquad
+	\vec{R} \coloneqq \frac{\vec{r}_1 + \vec{r}_2}{2}
+\end{equation}
+One can easily show that this leads to the following relations:
+\begin{equation}
+	\nabla _1 = \frac{1}{2} \nabla _R + \nabla _r
+	\qquad
+	\nabla _2 = \frac{1}{2} \nabla _R - \nabla _r
+\end{equation}
+To derive this, I will call \(x^i_1, x^i_2, X^i \) and \(x^i\) the coordinates of \(\vec{r}_1, \vec{r}_2, \vec{R} \) and \(\vec{r}\) respectively. By applying the chain rule,
+\begin{equation}
+	\frac{\partial }{\partial x^i_1} = \frac{\partial X^i}{\partial x^i_1} \frac{\partial }{\partial X^i} + \frac{\partial x^i}{\partial x^i_1} \frac{\partial }{\partial x^i} = \frac{1}{2} \frac{\partial }{\partial X^i} + \frac{\partial }{\partial x^i},
+\end{equation}
+and a similar result can be obtained for the second particle. With this result, the typical equation describing two particles in a potential (Eq. \eqref{deriv:initial_equation}) turns into a simpler form:
+\begin{equation}
+	\left[- \frac{1}{8\mu} \nabla _R^{2} - \frac{1}{2\mu } \nabla _r^2 + V(r)\right] \Psi (\vec{R},\vec{r})= E \Psi (\vec{R},\vec{r})
+\end{equation}
+This equation clearly suggests that the wavefunction can be separated into the product of a function describing the centre of mass and another one describing the system as seen from the centre-of-mass frame: \(\Psi (\vec{R},\vec{r}) = \psi_R \psi _r\). The problem can therefore be studied as two separate problems, and for the sake of this derivation we will only focus on the centre-of-mass description of it. The centre-of-mass Schrödinger equation is
+\begin{equation}
+	\left[- \frac{1}{2\mu }\nabla^2 + V(r)\right]\psi _r = E_{CM} \psi _r
+\end{equation}
+
+\paragraph{Relative velocity Maxwell-Boltzmann distribution}
+The relative velocity of the two particles is just the first derivative of the left-side relation in Eq. \eqref{eq:twobody_transform}:
+\begin{equation}
+	\vec{v}_{rel} = \vec{v}_1 - \vec{v}_2
+\end{equation}
+As the two particles' velocities are independent of each other, the probability of having a certain \(\vec{v}_{rel} \) is just the product of the two probabilities:
+\begin{equation}
+	P(\vec{v}_1, \vec{v}_2) = P(\vec{v}_1)P(\vec{v}_2)
+\end{equation}
+If the velocities are governed by a Maxwell-Boltzmann distribution with velocity dispersion \(\beta \), we find that
+\begin{equation}\label{eq:MB_rel_start}
+	P(\vec{v}_1, \vec{v}_2) = \left( \frac{1}{2\pi } \right)^3 \frac{1}{\beta ^6} \exp \left( -\frac{v_1^2 + v_2^2}{2\beta ^2} \right)  
+\end{equation}
+The relations \eqref{eq:twobody_transform} imply that the velocities of the two particles can be expressed in terms of the centre-of-mass velocity and of the relative velocity as follows:
+\begin{equation}
+	\vec{v}_1 = \vec{v}_{CM} + \frac{1}{2} \vec{v}_{rel}
+	\qquad
+	\vec{v}_2 = \vec{v}_{CM} - \frac{1}{2} \vec{v}_{rel} 
+\end{equation}
+This allows us to rewrite Eq. \eqref{eq:MB_rel_start} as
+\begin{equation}
+	P(\vec{v}_{rel} , \vec{v}_{CM} ) = \left( \frac{1}{2\pi } \right)^3 \frac{1}{\beta ^6} \exp \left( - \frac{2 v_{CM} ^2 + \frac{1}{2}v_{rel} ^2}{2\beta ^2} \right)  
+\end{equation}
+and to separate it into a Maxwell-Boltzmann distribution for the centre-of-mass velocity and another one for the relative velocity:
+\begin{equation}
+	P(\vec{v}_{rel} ) = \left( \frac{1}{4\pi } \right)^{\frac{3}{2}} \frac{1}{\beta ^3} \exp \left( - \frac{v_{rel} ^2}{4\beta ^2} \right)  
+\end{equation}
+Hence, we see that the relative velocity dispersion satisfies \(\beta _{rel}=\sqrt{2} \beta \). Thus, the distribution that describes the modulus of the relative velocity is
+\begin{equation}
+	P(v_{rel} ) = \left( \frac{1}{4\pi } \right) ^{\frac{1}{2}} \frac{v_{rel} ^2}{\beta ^3} \exp \left( - \frac{v_{rel} ^2}{4\beta ^2} \right)  
+\end{equation}
+
 \end{appendices}
