@@ -1,10 +1,10 @@
 \chapter{Experimental implications}\label{chap:implications}
 
-The Sommerfeld enhancement factor derived in Chapter \ref{chap:derivation} can greatly impact the interpretation of experimental limits set on the annihilation cross-section by direct observation of gamma-ray production from the Galactic Centre, dwarf spheroidal galaxies (dSphs) and the Cosmic Microwave Background. In order to show this, I will consider a non-self-conjugate dark matter model and compare it to the limits coming from Fermi-LAT data.
+The Sommerfeld enhancement factor derived in Chapter \ref{chap:derivation} can greatly impact the interpretation of experimental limits set on the annihilation cross section by direct observation of gamma-ray production from the Galactic Centre, dwarf spheroidal galaxies (dSphs) and the Cosmic Microwave Background. In order to show this, I will consider a non-self-conjugate dark matter model and compare it to the limits coming from Fermi-LAT data.
 
 \section{The Fermi-LAT limits}
 
-Profumo et al. \cite{Profumo_2018} reviewed data coming from the H.E.S.S., Fermi-LAT and Planck collaborations to set upper bounds on the annihilation cross-section in the hypothesis of self-conjugate dark matter. Fermi-LAT data concerns 15 dSphs, which are astronomical objects that, due to their very low velocity dispersion, are an interesting target to understand the implications of the Sommerfeld enhancement. The study assumes that dark matter preferentially annihilates into non-SM particles, like two short-lived dark mediators \(\phi \), that later decay into SM particles like quarks and leptons. This scenario is typically referred to as ``secluded dark matter''. For the sake of this research, I will only focus on the decay to \(4\tau \) leptons, so that the Fermi-LAT limit is the strongest one. This constrains the mass of the mediator to be
+Profumo et al. \cite{Profumo_2018} reviewed data coming from the H.E.S.S., Fermi-LAT and Planck collaborations to set upper bounds on the annihilation cross section in the hypothesis of self-conjugate dark matter. Fermi-LAT data concerns 15 dSphs, which are astronomical objects that, due to their very low velocity dispersion, are an interesting target to understand the implications of the Sommerfeld enhancement. The study assumes that dark matter preferentially annihilates into non-SM particles, like two short-lived dark mediators \(\phi \), that later decay into SM particles like quarks and leptons. This scenario is typically referred to as ``secluded dark matter''. For the sake of this research, I will only focus on the decay to \(4\tau \) leptons, so that the Fermi-LAT limit is the strongest one. This constrains the mass of the mediator to be
 \begin{equation}\label{eq:mediator_mass}
 	m_{\phi }  > 2 m_{\tau } 
 \end{equation}
@@ -52,21 +52,21 @@ in order for the decay to be allowed. The Feynman diagram for this supposed deca
 
 In their study, Profumo et al. include results for different mass regimes, but I will only consider the ones for \(M_{DM} \gg M_{\phi } \) (in accordance with the hypothesis that the mediator mass is negligible). Moreover, the original Fermi-LAT limits must be weakened by a factor of \(2\), because dark matter is not its own antiparticle in the model I am considering.
 % TODO: non sono convintissimo di questa frase
-This effectively halves the chances of annihilation, allowing the cross-section to double. In order to compare the limits to the theoretical predictions, I extracted the data from Figure 6 in \cite{Profumo_2018} by using a plot digitizer and I then interpolated them using a cubic spline, in order to plot them and to find the intersections with the theoretical values.
+This effectively halves the chances of annihilation, allowing the cross section to double. In order to compare the limits to the theoretical predictions, I extracted the data from Figure 6 in \cite{Profumo_2018} by using a plot digitizer and I then interpolated them using a cubic spline, in order to plot them and to find the intersections with the theoretical values.
 Both the original limits and the weakened limits are shown in Section \ref{sec:results} alongside the results in Fig. \ref{fig:comparison}, in a green and a black dashed line respectively.
 
 \section{The impact of Sommerfeld enhancement}
-The annihilation cross-section of two dark matter particles into two mediators can be derived in quantum field theory and is independent of velocity. It can be expressed as
+The annihilation cross section of two dark matter particles into two mediators can be derived in quantum field theory and is independent of velocity. It can be expressed as
 \begin{equation}
 	\sigma v = \frac{\pi \alpha^2}{M_{DM}^2},
 \end{equation}
 % TODO: spiegare cosa è la dark matter relic abundance?
-where \(\alpha\) is the strength of the interaction and \(M_{DM} \) is the mass of the dark matter particle. For non-self-conjugate dark matter, the value of the annihilation cross-section that gives the correct dark matter relic abundance for \(M_{DM} > 10 \mathrm{GeV} \) is \(\langle \sigma v \rangle _{relic}  = 4.4 \times 10^{-26} \mathrm{cm^{-3} s^{-1}}\). Without Sommerfeld enhancement, this enforces a linear relation between the strength of the interaction and the mass of the dark matter particles:
+where \(\alpha\) is the strength of the interaction and \(M_{DM} \) is the mass of the dark matter particle. For non-self-conjugate dark matter, the value of the annihilation cross section that gives the correct dark matter relic abundance for \(M_{DM} > 10 \mathrm{GeV} \) is \(\langle \sigma v \rangle _{relic}  = 4.4 \times 10^{-26} \mathrm{cm^{-3} s^{-1}}\). Without Sommerfeld enhancement, this enforces a linear relation between the strength of the interaction and the mass of the dark matter particles:
 \begin{equation}
 	\alpha(M_{DM} ) = M_{DM} \sqrt{\frac{\langle \sigma v \rangle _{relic}}{\pi}}
 \end{equation}
 
-If Sommerfeld enhancement is relevant at the time of freeze-out, the situation is different, because the cross-section must be corrected by multiplying by the Sommerfeld enhancement factor from Eq. \eqref{deriv:result}. The parameter \(\alpha \) must then satisfy the following equation:
+If Sommerfeld enhancement is relevant at the time of freeze-out, the situation is different, because the cross section must be corrected by multiplying by the Sommerfeld enhancement factor from Eq. \eqref{deriv:result}. The parameter \(\alpha \) must then satisfy the following equation:
 \begin{equation}\label{eq:relic_Sommerfeld}
 	\langle \sigma v \rangle _{relic} = \frac{2\pi \alpha ^3}{M_{DM} ^2} \frac{1 / v}{1- e^{-2\pi \frac{\alpha}{v}}},
 \end{equation}
@@ -83,7 +83,7 @@ More precisely, one should compute a thermal average of the Sommerfeld enhanceme
 	\label{fig:alpha}
 \end{figure}
 
-We can now use the corrected \(\alpha (M_{DM} )\) dependence to visualize the Sommerfeld enhancement factor (Fig. \ref{fig:enhancement_factor}) as a function of \(M_{DM} \) and of the relative velocity in units of \(c\) and confirm that it has indeed a huge impact on the cross-section (\(2-4\) orders of magnitude) at low velocities like those found in dSphs.
+We can now use the corrected \(\alpha (M_{DM} )\) dependence to visualize the Sommerfeld enhancement factor (Fig. \ref{fig:enhancement_factor}) as a function of \(M_{DM} \) and of the relative velocity in units of \(c\) and confirm that it has indeed a huge impact on the cross section (\(2-4\) orders of magnitude) at low velocities like those found in dSphs.
 
 \begin{figure}[htbp]
 	\centering
@@ -92,7 +92,7 @@ We can now use the corrected \(\alpha (M_{DM} )\) dependence to visualize the So
 	\label{fig:enhancement_factor}
 \end{figure}
 
-The predicted cross-section with the corrected \(\alpha (M_{DM} )\) is
+The predicted cross section with the corrected \(\alpha (M_{DM} )\) is
 \begin{equation}\label{eq:sigma_enhanced}
 	\langle \sigma v \rangle (M_{DM} )= \frac{\pi \alpha (M_{DM} )^2}{M_{DM} ^2} \left \langle S \right \rangle(M_{DM} ),
 \end{equation}
@@ -107,17 +107,17 @@ The averaged Sommerfeld enhancement factor, which I computed numerically, is the
 
 
 \section{Results}\label{sec:results}
-In the simple case of no Sommerfeld enhancement and therefore of a linear \(\alpha (M_{DM} )\), the predicted cross-section is
+In the simple case of no Sommerfeld enhancement and therefore of a linear \(\alpha (M_{DM} )\), the predicted cross section is
 \begin{equation}
 	\langle \sigma v \rangle = \langle \sigma v \rangle _{relic}
 \end{equation}
-for any value of \(M_{DM} \). Since the Fermi-LAT limits are upper bounds on the cross-section, we want the predicted cross-section to be lower than the limits and this constrains the dark matter mass to be
+for any value of \(M_{DM} \). Since the Fermi-LAT limits are upper bounds on the cross section, we want the predicted cross section to be lower than the limits and this constrains the dark matter mass to be
 \begin{equation}\label{eq:result_simple}
 	M_{DM} \gtrsim 80 \mathrm{GeV}, 
 \end{equation}
 which is where the blue horizontal line of \(\langle \sigma v \rangle _{relic} \) and the weakened interpolated Fermi-LAT limits meet in Fig. \ref{fig:comparison}.
 
-The same reasoning can be applied to the enhanced cross-section from Eq. \ref{eq:sigma_enhanced}, which is shown as a continuous red line. Following the same reasoning as before, we find that
+The same reasoning can be applied to the enhanced cross section from Eq. \ref{eq:sigma_enhanced}, which is shown as a continuous red line. Following the same reasoning as before, we find that
 \begin{equation}\label{eq:result_enhanced}
 	M_{DM} \gtrsim 9.9 \mathrm{TeV}
 \end{equation}

@@ -1,30 +1,32 @@
 \chapter{Introduction}\label{chap:introduction}
 
 \section{Structure of the thesis}
-The objective of this work is to review the quantum-mechanical effect known as Sommerfeld enhancement \cite{Sommerfeld_1931}, and understand how its presence can deeply affect the theoretical predictions of some relevant dark matter models. This will be done by considering the theoretical framework laid out by Arkani-Hamed et al. in \cite{Arkani_2009} and by applying it to the experimental limits on the dark matter annihilation cross-section found by Profumo et al. \cite{Profumo_2018} through direct observation of gamma-ray production from dwarf spheroidal galaxies orbiting the Milky Way. The thesis is structured in three parts:
+The objective of this work is to review the quantum-mechanical effect known as Sommerfeld enhancement \cite{Sommerfeld_1931}, and understand how its presence can deeply affect the theoretical predictions of some relevant dark matter models. This will be done by considering the theoretical framework laid out by Arkani-Hamed et al. in \cite{Arkani_2009} and by applying it to the experimental limits on the dark matter annihilation cross section found by Profumo et al. \cite{Profumo_2018} through direct observation of gamma-ray production from dwarf spheroidal galaxies orbiting the Milky Way. The thesis is structured in three parts:
 \begin{itemize}
 	\item In Chapter \ref{chap:introduction}, I introduce the concept of dark matter and of its indirect detection. At the end of the chapter, a detailed description of Sommerfeld enhancement and its use in this work will be given.
 	\item In Chapter \ref{chap:derivation}, I will thoroughly explain the mathematical derivation that leads to the final expression of the Sommerfeld enhancement factor in the so-called Coulomb approximation.
 	\item In Chapter \ref{chap:implications}, I will apply the concepts and formulae set out in the first two chapters to derive lower bounds on the dark matter mass with and without Sommerfeld enhancement. After this, I will check whether the Coulomb approximation was a good approximation in this case, and I will draw the conclusions of this research.
 \end{itemize}
 
-The whole thesis uses natural units where \(c=\hbar=G=1\). Numerical calculations had to be performed to compute the enhanced cross-section. For completeness, the code I wrote is open-source on \href{https://github.com/LuckeeDev/bachelor-thesis}{GitHub}.
+The whole thesis uses natural units where \(c=\hbar=G=1\). Numerical calculations had to be performed to compute the enhanced cross section. For completeness, the code I wrote is open-source on \href{https://github.com/LuckeeDev/bachelor-thesis}{GitHub}.
 
 \section{Dark matter}
+
+\cite{Bertone_2018} \cite{Cirelli_2024}
 
 \section{Indirect detection}
 
 \section{Sommerfeld enhancement}
 
-Initially studied by Sommerfeld in 1931 \cite{Sommerfeld_1931}, the Sommerfeld enhancement is an effect arising in non-relativistic quantum mechanics where the introduction of a long-range potential affects the cross-section of a process happening locally at the origin.
+Initially studied by Sommerfeld in 1931 \cite{Sommerfeld_1931}, the Sommerfeld enhancement is an effect arising in non-relativistic quantum mechanics where the introduction of a long-range potential affects the cross section of a process happening locally at the origin.
 
-One can easily picture the effect by making an analogy with classical mechanics. Consider an object traveling with velocity \(v\) towards a star of radius \(R\) and mass \(M\): if we neglect gravity, the cross-section for falling into the star is simply the area occupied by the star \(\sigma _0=\pi R^2\). However, if we consider gravity, the cross-section increases because the object can be dragged from further away into the star. This means that the cross-section is actually \(\sigma = \pi b_{max}^2 \), where \(b_{max}\) is the largest the impact parameter can be for the distance of closest approach of the orbit to be \(R\) \cite{Arkani_2009, Cirelli_2024}. We can determine the enhancement factor by imposing conservation of energy and angular momentum, and get
+One can easily picture the effect by making an analogy with classical mechanics. Consider an object traveling with velocity \(v\) towards a star of radius \(R\) and mass \(M\): if we neglect gravity, the cross section for falling into the star is simply the area occupied by the star \(\sigma _0=\pi R^2\). However, if we consider gravity, the cross section increases because the object can be dragged from further away into the star. This means that the cross section is actually \(\sigma = \pi b_{max}^2 \), where \(b_{max}\) is the largest the impact parameter can be for the distance of closest approach of the orbit to be \(R\) \cite{Arkani_2009, Cirelli_2024}. We can determine the enhancement factor by imposing conservation of energy and angular momentum, and get
 \begin{equation}
 	\sigma = \sigma _0 \left( 1+ \frac{v_{esc} ^2}{v ^2} \right), 
 \end{equation}
-where \(v_{esc} ^2 = 2M / R\) is the escape velocity from the surface of the star. The cross-section can thus be greatly enhanced at velocities \(v \ll v_{esc} \).
+where \(v_{esc} ^2 = 2M / R\) is the escape velocity from the surface of the star. The cross section can thus be greatly enhanced at velocities \(v \ll v_{esc} \).
 
-In quantum mechanics, something similar can happen with the introduction of a long-range potential. Consider, for instance, an annihilation happening locally at the origin thanks to a Hamiltonian of the type \(H_{ann} = U_{ann} \delta (\vec{r})\). The rate of the process will be proportional to the squared modulus of the wavefunction at the origin \(\vert \psi ^{(0)}(0) \vert^2 \). If we introduce a potential, the original wavefunction will get distorted and will have a different value at the origin, now making the rate proportional to \(\vert \psi (0) \vert^2 \). The Sommerfeld enhancement factor is defined as the ratio between the two cross-sections, and therefore between the squared moduli of the wavefunctions:
+In quantum mechanics, something similar can happen with the introduction of a long-range potential. Consider, for instance, an annihilation happening locally at the origin thanks to a Hamiltonian of the type \(H_{ann} = U_{ann} \delta (\vec{r})\). The rate of the process will be proportional to the squared modulus of the wavefunction at the origin \(\vert \psi ^{(0)}(0) \vert^2 \). If we introduce a potential, the original wavefunction will get distorted and will have a different value at the origin, now making the rate proportional to \(\vert \psi (0) \vert^2 \). The Sommerfeld enhancement factor is defined as the ratio between the two cross sections, and therefore between the squared moduli of the wavefunctions:
 \begin{equation}\label{eq:sommerfeld_def}
 	S = \frac{\sigma }{\sigma _0} = \frac{\vert \psi (0) \vert ^2}{\vert \psi ^{(0)}(0) \vert ^2}
 \end{equation}
@@ -45,4 +47,4 @@ If the Coulomb approximation is not valid, one should instead use the Yukawa pot
 \end{equation}
 where the approximation is most accurate for \(\kappa \thickapprox 1.74\) \cite{Cirelli_2024}. In the following, I will always assume a massless mediator, and I will later check if it was indeed a good approximation.
 
-One more reason for being interested in Sommerfeld enhancement is that, as we will see in the following, it is velocity-dependent, and therefore allows for different cross-sections at freeze-out and today. In particular, it allows higher cross-sections today compared to the one that is required to give the correct dark matter thermal relic abundance (\(\langle \sigma v \rangle_{relic}=4.4\times 10^{-26} \mathrm{cm^3 s^{-1}}\) for non-self-conjugate dark matter).
+One more reason for being interested in Sommerfeld enhancement is that, as we will see in the following, it is velocity-dependent, and therefore allows for different cross sections at freeze-out and today. In particular, it allows higher cross sections today compared to the one that is required to give the correct dark matter thermal relic abundance (\(\langle \sigma v \rangle_{relic}=4.4\times 10^{-26} \mathrm{cm^3 s^{-1}}\) for non-self-conjugate dark matter).
