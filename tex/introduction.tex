@@ -8,11 +8,11 @@ The objective of this work is to review the quantum-mechanical effect known as S
 	\item In Chapter \ref{chap:implications}, I will apply the concepts and formulae set out in the first two chapters to derive lower bounds on the dark matter mass with and without Sommerfeld enhancement. After this, I will check whether the Coulomb approximation was a good approximation in this case, and I will draw the conclusions of this research.
 \end{itemize}
 
-The whole thesis uses natural units where \(c=\hbar=1\). Numerical calculations had to be performed to compute the enhanced cross section. For completeness, the code I wrote is open-source on \href{https://github.com/LuckeeDev/bachelor-thesis}{GitHub}.
+The whole thesis uses natural units where \(c=\hbar=1\). Numerical calculations had to be performed to compute the enhanced cross section: for completeness, the code I wrote is open-source on \href{https://github.com/LuckeeDev/bachelor-thesis}{GitHub}.
 
 \section{Dark matter}
 
-I will now try to give an overview of the history of dark matter, which problems it solves and an account of the main pieces of cosmological evidence supporting its existence. Most of the content of this section comes from the following sources, which I recommend to the reader to delve deeper into how dark matter has come to be accepted as part of the standard cosmological model: \emph{History of dark matter} \cite{Bertone_2018} by Bertone and Hooper, an excellent rundown of historical developments in the research on this topic which credits the contributions of way more researchers than those that I'll report in the following; \emph{Dark matter} by Cirelli, Strumia and Zupan \cite{Cirelli_2024}, the most complete review on dark matter to date; and the lectures given by Volansky in Florence in 2014 \cite{Volansky_2014} and by Lisanti in Trieste in 2018 \cite{Lisanti_2018}.
+I will now try to give an overview of the history of dark matter, which problems it solves and an account of the main pieces of cosmological evidence supporting its existence. Most of the content of this section comes from the following sources, which I recommend to the reader to delve deeper into how dark matter has come to be accepted as part of the standard cosmological model: \emph{History of dark matter} by Bertone and Hooper \cite{Bertone_2018}, an excellent rundown of historical developments in the research on this topic which credits the contributions of way more researchers than those that I'll report in the following; \emph{Dark matter} by Cirelli, Strumia and Zupan \cite{Cirelli_2024}, the most complete review on dark matter to date; and the lectures given by Volansky in Florence in 2014 \cite{Volansky_2014} and by Lisanti in Trieste in 2018 \cite{Lisanti_2018}.
 
 \subsection{Galaxy clusters}
 
@@ -22,7 +22,7 @@ Hints of new physics come from all cosmological scales. Historically, the first 
 \end{equation}
 In order to reproduce Zwicky's calculations, I will assume Coma to be a homogenous sphere of mass \(M\) and radius \(R\). The potential energy between a shell of thickness \(\mathrm{d} r\) at radius \(r\) and the interior of the shell is
 \begin{equation}
-	\mathrm{d} U = G \frac{M_{shell} M_{int} }{r}
+	\mathrm{d} U = - G \frac{M_{shell} M_{int} }{r}
 \end{equation}
 where
 \begin{equation}
@@ -32,20 +32,20 @@ where
 \end{equation}
 where \(\rho \) is the density of the cluster. The total potential energy is found by integrating Eq. \eqref{eq:diff_potential} from \(0\) to \(R\) and is
 \begin{equation}\label{eq:potential}
-	\langle U \rangle = \int\limits_0^R \mathrm{d} U = \frac{3GM^2}{5R}
+	\langle U \rangle = \int\limits_0^R \mathrm{d} U = - \frac{3GM^2}{5R}
 \end{equation}
 We now assume that the cluster is made up of \(N\) galaxies of equal mass \(m\). This gives a total kinetic energy of
 \begin{equation}\label{eq:kinetic}
 	\langle T \rangle = \frac{1}{2} Nm \langle v^2 \rangle 
 \end{equation}
-Equating Eqs. \eqref{eq:potential} and \eqref{eq:kinetic} gives a velocity dispersion of
+Applying the virial theorem gives a velocity dispersion of
 \begin{equation}\label{eq:dispersion}
 	\sqrt{\langle v^2 \rangle } = \sqrt{\frac{3GNm}{5R}} \simeq 82 \mathrm{km / s}, 
 \end{equation}
 where I have used Zwicky's estimates of \(N=800\) galaxies of \(m = 10^9 M_\odot\) in a sphere of radius \(R=10^6 \mathrm{ly} \) \cite{Bertone_2018}. This result is off by orders of magnitude from the line-of-sight velocity dispersion of visible matter in the Coma cluster measured via Doppler redshifts today, which is \(v_{los} \sim 10^3 \mathrm{km /s} \).
 % TODO: find reference for v_los and other Coma data
 
-Coma cluster's visible mass is estimated to be on the order of \(10^{14} M_\odot\) from the visible mass in its galaxies and the mass in gas measured from its X-ray emission. The discrepancy in the velocity dispersion could be explained by an additional component of dark matter mass in the cluster. In order to show this, I am going to perform the same calculation as above, but starting from the known velocity dispersion to give an estimate of the cluster's mass. We also know that Coma is \(\sim 100 \mathrm{Mpc} \) away from us, that it occupies an angular radius of order \(1\) degree and that it is approximately spherically symmetric. By inverting Eq. \eqref{eq:dispersion}, we find that
+The discrepancy in the velocity dispersion could be explained by an additional component of dark matter mass in the cluster. In order to show this, I am going to perform the same calculation as above, but starting from the known velocity dispersion to give an estimate of the cluster's mass. We also know that Coma is \(\sim 100 \mathrm{Mpc} \) away from us, that it occupies an angular radius of order \(1\) degree and that it is approximately spherically symmetric. By inverting Eq. \eqref{eq:dispersion}, we find that
 \begin{equation}
 	M= \frac{5R \langle v^2 \rangle }{3G} = \frac{5R v_{los} ^2}{G},
 \end{equation}
@@ -57,14 +57,14 @@ which gives a mass of
 \begin{equation}
 	M=\frac{\pi}{36} \frac{d v_{los} ^2}{G} \simeq 2 \times 10^{15} M_\odot
 \end{equation}
-This estimate is off by one order of magnitude compared to the visible mass estimate of \(10^{14} M_\odot\). This suggests that a large part of mass in the Coma cluster is currently unaccounted for.
+This estimate is off by one order of magnitude compared to the estimate of \(10^{14} M_\odot\) coming from the visible mass in its galaxies and the mass in gas measured from its X-ray emission. This suggests that a large part of mass in the Coma cluster is currently unaccounted for.
 
 \subsection{Galactic rotation curves}
-Another important piece of evidence followed in 1970 with Rubin and Ford's optical observations of the M31 galaxy rotation curves \cite{Rubin_1970}. It had been known for a long time that Andromeda rotates, but their measurements represented a significant improvement on previous ones and hinted for the first time at an unexpected velocity distribution in the outskirts of the galaxy. From Newtonian mechanics, we expect the rotational velocity at a distance \(r\) from the centre of the disk to be \cite{Lisanti_2018} related to the enclosed mass \(M(r)\) by
+Another important piece of evidence followed in 1970 with Rubin and Ford's optical observations of the M31 galaxy rotation curves \cite{Rubin_1970}. It had been known for a long time that Andromeda rotates, but their measurements represented a significant improvement on previous ones and hinted for the first time at an unexpected velocity distribution in the outskirts of the galaxy. From Newtonian mechanics, we expect the rotational velocity at a distance \(r\) from the centre of the disk to be related to the enclosed mass \(M(r)\) by \cite{Lisanti_2018}
 \begin{equation}\label{eq:rotational_velocity}
 	v(r)=\sqrt{\frac{GM(r)}{r}} 
 \end{equation}
-Assuming a typical exponential mass distribution, Freeman \cite{Freeman_1970} derived a decaying velocity curve at large radii that is shown in Fig. \ref{fig:rotation_curves}. Surprisingly, Rubin and Ford's data seemed to flatten out at large radii. This was confirmed shortly after by studies conducted with 21cm HI line observations, which allowed to extend the data further out into the galactic disc. These studies are summarised in Fig. \ref{fig:rotation_curves}: the pink markers show the first attempt at determining the galaxy's rotation curve by Babcock in \cite{Babcock_1939}; the black dots show the above-mentioned data from Rubin and Ford with optical observations; the red points and green points are 21cm HI line measurements, from Roberts and Whitehurst \cite{Roberts_1975}, and Carignan et al. \cite{Carignan_2006} respectively. Similar observations have been made for many other galaxies and have been collected by Bosma in \cite{Bosma_1981}.
+Assuming a typical exponential mass distribution, Freeman \cite{Freeman_1970} derived a decaying velocity curve at large radii that is shown in Fig. \ref{fig:rotation_curves}. Surprisingly, Rubin and Ford's data seemed to flatten out at large radii. This was confirmed shortly after by studies conducted with 21cm HI line observations, which allowed to extend the data further out into the galactic disc. These studies are summarised in Fig. \ref{fig:rotation_curves}: the pink markers show the first attempt at determining the galaxy's rotation curve by Babcock in 1939 \cite{Babcock_1939}; the black dots show the above-mentioned data from Rubin and Ford with optical observations; the red points and green points are 21cm HI line measurements, from Roberts and Whitehurst in 1975 \cite{Roberts_1975}, and Carignan et al. in 2006 \cite{Carignan_2006} respectively. Similar observations have been made for many other galaxies and have been collected by Bosma in \cite{Bosma_1981}.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{rotation_curves.jpg}
@@ -72,8 +72,8 @@ Assuming a typical exponential mass distribution, Freeman \cite{Freeman_1970} de
 	\label{fig:rotation_curves}
 \end{figure}
 
-Two approaches have been attempted to solve this issue: the first one, known as Modified Newtonian Dynamics (MOND), sets out to adjust Newton's second law to explain the discrepancies in observational data, but has been partially ruled out by evidence outlined in Section \ref{sec:bullet}. The second one, currently accepted by the scientific community, is the presence of additional dark matter inside galaxies. 
-By inspecting Eq. \eqref{eq:rotational_velocity}, we can infer that \(v(r)\) would flatten in the case of \(M \propto r\), or in other words \(\rho \propto r^{-2} \) in the hypothesis of a spherically-distributed dark matter. The precise dark matter distribution can be derived from numerical simulations, which however strongly depend on the assumptions used to construct them. One of the most common profiles used in the literature, and also by Profumo et al. in the reference paper for this work \cite{Profumo_2018}, is the so-called Navarro-Frenk-White profile
+Two approaches have been attempted to solve this issue: the first one, known as Modified Newtonian Dynamics (MOND), sets out to adjust Newton's second law to explain the discrepancies in observational data, but has struggled to gain consensus and has been partially ruled out by evidence outlined in Section \ref{sec:bullet}. The second one, currently accepted by the scientific community, is the presence of additional dark matter inside galaxies.
+By inspecting Eq. \eqref{eq:rotational_velocity}, we can infer that \(v(r)\) would flatten in the case of \(M \propto r\), or in other words \(\rho \propto r^{-2} \) in the hypothesis of a spherically-distributed dark matter\footnote{The hypothesis of the existence of these spherical ``halos'' is well-motivated, because as we will see later dark matter is non-dissipative and thus does not collapse to form a disk.}. The precise dark matter distribution can be derived from numerical simulations, which however strongly depend on the assumptions used to construct them. One of the most common profiles used in the literature, and also by Profumo et al. in the reference paper for this work \cite{Profumo_2018}, is the so-called Navarro-Frenk-White profile
 \begin{equation}
 	\rho_{NFW} (r) = \frac{\rho _s}{\frac{r}{r_s}\left( 1+ \frac{r}{r_s} \right)^2 },
 \end{equation}
