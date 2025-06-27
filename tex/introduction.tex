@@ -59,7 +59,7 @@ which gives a mass of
 \end{equation}
 This estimate is off by one order of magnitude compared to the estimate of \(10^{14} M_\odot\) coming from the visible mass in its galaxies and the mass in gas measured from its X-ray emission. This suggests that a large part of mass in the Coma cluster is currently unaccounted for.
 
-\subsection{Galactic rotation curves}
+\subsection{Galactic rotation curves}\label{sec:rotation_curves}
 Another important piece of evidence followed in 1970 with Rubin and Ford's optical observations of the M31 galaxy rotation curves \cite{Rubin_1970}. It had been known for a long time that Andromeda rotates, but their measurements represented a significant improvement on previous ones and hinted for the first time at an unexpected velocity distribution in the outskirts of the galaxy. From Newtonian mechanics, we expect the rotational velocity at a distance \(r\) from the centre of the disk to be related to the enclosed mass \(M(r)\) by \cite{Lisanti_2018}
 \begin{equation}\label{eq:rotational_velocity}
 	v(r)=\sqrt{\frac{GM(r)}{r}} 
@@ -73,7 +73,7 @@ Assuming a typical exponential mass distribution, Freeman \cite{Freeman_1970} de
 \end{figure}
 
 Two approaches have been attempted to solve this issue: the first one, known as Modified Newtonian Dynamics (MOND), sets out to adjust Newton's second law to explain the discrepancies in observational data, but has struggled to gain consensus and has been partially ruled out by evidence outlined in Section \ref{sec:bullet}. The second one, currently accepted by the scientific community, is the presence of additional dark matter inside galaxies.
-By inspecting Eq. \eqref{eq:rotational_velocity}, we can infer that \(v(r)\) would flatten in the case of \(M \propto r\), or in other words \(\rho \propto r^{-2} \) in the hypothesis of a spherically-distributed dark matter\footnote{The hypothesis of the existence of these spherical ``halos'' is well-motivated, because as we will see later dark matter is non-dissipative and thus does not collapse to form a disk.}. The precise dark matter distribution can be derived from numerical simulations, which however strongly depend on the assumptions used to construct them. One of the most common profiles used in the literature, and also by Profumo et al. in the reference paper for this work \cite{Profumo_2018}, is the so-called Navarro-Frenk-White profile
+By inspecting Eq. \eqref{eq:rotational_velocity}, we can infer that \(v(r)\) would flatten in the case of \(M \propto r\), or in other words \(\rho \propto r^{-2} \) in the hypothesis of a spherically-distributed dark matter ``halo''\footnote{The hypothesis of the existence of these spherical ``halos'' is well-motivated, because as we will see later dark matter is non-dissipative and thus does not collapse to form a disk.}. The precise dark matter distribution can be derived from numerical simulations, which however strongly depend on the assumptions used to construct them. One of the most common profiles used in the literature, and also by Profumo et al. in the reference paper for this work \cite{Profumo_2018}, is the so-called Navarro-Frenk-White profile
 \begin{equation}
 	\rho_{NFW} (r) = \frac{\rho _s}{\frac{r}{r_s}\left( 1+ \frac{r}{r_s} \right)^2 },
 \end{equation}
@@ -89,10 +89,13 @@ The so-called Bullet cluster constitutes the strongest piece of evidence against
 	\label{fig:bullet}
 \end{figure}
 
-\section{Indirect detection}
+\subsection{The properties of dark matter and WIMPs}
 
-\subsection{Recap of DM's properties and WIMPs}
-See \cite{Cirelli_2024} for great recap of dark matter's properties.
+The plethora of astrophysical and cosmological data gathered about dark matter can be summarised by saying that we expect dark matter to be \emph{cold, non-interacting matter with adiabatic inhomogeneities} (Cirelli et al., \cite[Chapter 1]{Cirelli_2024}). \emph{Cold} refers to the fact that dark matter behaved as a non-relativistic fluid at the time of matter-radiation equality, and this allowed it to cluster and form structures like the ``halos'' mentioned in Section \ref{sec:rotation_curves}. \emph{Non-interacting} is what makes dark matter so hard to detect: it means that dark matter's interactions with any other kind of matter can be \emph{cosmologically} neglected. This does not mean that dark matter does not interact at all: indirect detection, which will be further discussed in Section \ref{sec:indirect_detection}, relies on dark matter annihilating with itself and producing detectable astrophysical signals. \emph{Stable} means that it has existed since the beginning of the universe and that it has not disappeared yet, while \emph{adiabatic} means that the composition of the dark matter fluid is homogeneous on cosmological scales. The description given by Cirelli et al. also stresses the word \emph{matter}, because we expect its density to be proportional to the inverse of the volume (contrary to dark energy, whose density seems to remain constant at any scale).
+
+Weakly Interacting Massive Particles (WIMPs) are a strong candidate for dark matter that satisfy all of these conditions, and they constitute the object of research of the reference work by Profumo et al. \cite{Profumo_2018}. Despite suggesting a connection with the weak interaction, the term is used more broadly in the paper, and means a class of particles that has interactions with strength on the scale of the weak interaction, and thus has weak-scale-like annihilation cross section and mass. One of the main points of interest about WIMPs is that they could easily explain today's dark matter abundance via a thermal freeze-out process as described in detail in \cite[Chapter 4]{Cirelli_2024}. Briefly, this would mean that dark matter and standard model particles were once part of the same interacting thermal bath, but that at one point the temperature dropped below a certain threshold so that the dark matter stopped interacting and decoupled from the bath. The dark matter that exists today is a ``relic'' from this frozen process. Coincidentally, the required cross-section that one obtains by working in this theoretical framework is on the order of a typical weak-scale annihilation cross section (this is commonly referred to as the \emph{WIMP miracle}).
+
+\section{Indirect detection}\label{sec:indirect_detection}
 See Hooper on indirect detection \cite{Hooper_2018}.
 
 \subsection{Gamma-ray flux from dark matter annihilation}
