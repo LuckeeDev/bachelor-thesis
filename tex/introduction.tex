@@ -96,9 +96,24 @@ The plethora of astrophysical and cosmological data gathered about dark matter c
 Weakly Interacting Massive Particles (WIMPs) are a strong candidate for dark matter that satisfy all of these conditions, and they constitute the object of research of the reference work by Profumo et al. \cite{Profumo_2018}. Despite suggesting a connection with the weak interaction, the term is used more broadly in the paper, and means a class of particles that has interactions with strength on the scale of the weak interaction, and thus has weak-scale-like annihilation cross section and mass. One of the main points of interest about WIMPs is that they could easily explain today's dark matter abundance via a thermal freeze-out process as described in detail in \cite[Chapter 4]{Cirelli_2024}. Briefly, this would mean that dark matter and standard model particles were once part of the same interacting thermal bath, but that at one point the temperature dropped below a certain threshold so that the dark matter stopped interacting and decoupled from the bath. The dark matter that exists today is a ``relic'' from this frozen process. Coincidentally, the required cross-section that one obtains by working in this theoretical framework is on the order of a typical weak-scale annihilation cross section (this is commonly referred to as the \emph{WIMP miracle}).
 
 \section{Indirect detection}\label{sec:indirect_detection}
-See Hooper on indirect detection \cite{Hooper_2018}.
+Indirect detection experiments aim at detecting an excess of cosmic ray fluxes due to dark matter above expected astrophysical contributions. This can happen if dark matter annihilates or decays to standard model particles that then travel to Earth and can be detected by telescopes. This comes with its own significant challenges, given especially by the high astrophysical background. Despite this, some of the stricter bounds on dark matter annihilation cross section today \cite{Hooper_2018} come from this kind of experiments and by works like \cite{Profumo_2018}. In the following, I will show how the gamma-ray flux on Earth depends on the dark matter's properties and on the astrophysical properties of the object in study. This will be used to briefly discuss potential targets for indirect detection. Later, I will show how the hypotheses that we put on the astrophysical context can greatly impact the interpretation of the gamma-ray flux.
 
 \subsection{Gamma-ray flux from dark matter annihilation}
+In order to compute the contribution to gamma-ray fluxes from dark matter annihilation, I will start by counting the number of possible annihilating pairs in a volume \(\mathrm{d}^3 \vec{r}\). In the hypothesis of non-self-conjugate dark matter, this number is
+\begin{equation}\label{eq:dN}
+	\mathrm{d} N = \frac{1}{4} \left( \frac{\rho_{DM} (\vec{r})}{M_{DM} } \right) ^2 \mathrm{d}^3 \vec{r}
+\end{equation}
+This is because annihilation is a two-body process, and the number of pairs is proportional to the square of the number of particles. The gamma-ray flux due to dark matter decay can be obtained in a similar fashion by using instead a linear proportionality, since it is a one-body process. A factor of \(1 /2\) is introduced to avoid counting pairs twice, and another one comes from the fact that each particle can only annihilate with half of the total number of particles \cite{Sala_2019}.
+
+Assuming that dark matter annihilates into a pair of standard model particles \(f\) with cross section \(\langle \sigma v \rangle_f \), then multiplying Eq. \eqref{eq:dN} by \(\langle \sigma v \rangle_f \) and summing over all possible decay products gives the total number of dark matter annihilations per second:
+\begin{equation}
+	\frac{\mathrm{d}N}{\mathrm{d}t} = \mathrm{d} ^3 \vec{r} \frac{1}{4} \left( \frac{\rho_{DM} (\vec{r})}{M_{DM} } \right)^2 \sum_{f} \langle \sigma v \rangle_f
+\end{equation}
+
+We can get the total number of photons produced per second in an energy bin \(\Delta E\) centred on \(E\) by multiplying by the number of photons produced by the species \(f\) inside the sum:
+\begin{equation}
+	\frac{\mathrm{d}N_{\gamma } }{\mathrm{d}t}\Delta E = \mathrm{d} ^3 \vec{r} \frac{1}{4} \left( \frac{\rho_{DM} (\vec{r})}{M_{DM} } \right)^2 \sum_{f} \langle \sigma v \rangle_f \Delta E \frac{\mathrm{d}N_{f \to \gamma } }{\mathrm{d}E}    
+\end{equation}
 
 \subsection{Impact of J-factor on cross section estimates}
 
@@ -110,7 +125,7 @@ One can easily picture the effect by making an analogy with classical mechanics.
 \begin{equation}
 	\sigma = \sigma _0 \left( 1+ \frac{v_{esc} ^2}{v ^2} \right), 
 \end{equation}
-where \(v_{esc} ^2 = 2GM / R\) is the escape velocity from the surface of the star. The cross section can thus be greatly enhanced at velocities \(v \ll v_{esc} \).
+where \(v_{esc} ^2 = 2GM / R\) is the squared escape velocity from the surface of the star. The cross section can thus be greatly enhanced at velocities \(v \ll v_{esc} \).
 
 In quantum mechanics, something similar can happen with the introduction of a long-range potential. Consider, for instance, an annihilation happening locally at the origin thanks to a Hamiltonian of the type \(H_{ann} = U_{ann} \delta (\vec{r})\). The rate of the process will be proportional to the squared modulus of the wavefunction at the origin \(\vert \psi ^{(0)}(0) \vert^2 \). If we introduce a potential, the original wavefunction will get distorted and will have a different value at the origin, now making the rate proportional to \(\vert \psi (0) \vert^2 \). The Sommerfeld enhancement factor is defined as the ratio between the two cross sections, and therefore between the squared moduli of the wavefunctions:
 \begin{equation}\label{eq:sommerfeld_def}
