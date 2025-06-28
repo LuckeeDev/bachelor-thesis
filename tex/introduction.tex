@@ -96,7 +96,7 @@ The plethora of astrophysical and cosmological data gathered about dark matter c
 Weakly Interacting Massive Particles (WIMPs) are a strong candidate for dark matter that satisfy all of these conditions, and they constitute the object of research of the reference work by Profumo et al. \cite{Profumo_2018}. Despite suggesting a connection with the weak interaction, the term is used more broadly in the paper, and means a class of particles that has interactions with strength on the scale of the weak interaction, and thus has weak-scale-like annihilation cross section and mass. One of the main points of interest about WIMPs is that they could easily explain today's dark matter abundance via a thermal freeze-out process as described in detail in \cite[Chapter 4]{Cirelli_2024}. Briefly, this would mean that dark matter and standard model particles were once part of the same interacting thermal bath, but that at one point the temperature dropped below a certain threshold so that the dark matter stopped interacting and decoupled from the bath. The dark matter that exists today is a ``relic'' from this frozen process. Coincidentally, the required cross-section that one obtains by working in this theoretical framework is on the order of a typical weak-scale annihilation cross section (this is commonly referred to as the \emph{WIMP miracle}).
 
 \section{Indirect detection}\label{sec:indirect_detection}
-Indirect detection experiments aim at detecting an excess of cosmic ray fluxes due to dark matter above expected astrophysical contributions. This can happen if dark matter annihilates or decays to standard model particles that then travel to Earth and can be detected by telescopes. This comes with its own significant challenges, given especially by the high astrophysical background. Despite this, some of the stricter bounds on dark matter annihilation cross section today \cite{Hooper_2018} come from this kind of experiments and by works like \cite{Profumo_2018}. In the following, I will show how the gamma-ray flux on Earth depends on the dark matter's properties and on the astrophysical properties of the object in study. This will be used to briefly discuss potential targets for indirect detection. Later, I will show how the hypotheses that we put on the astrophysical context can greatly impact the interpretation of the gamma-ray flux.
+Indirect detection experiments aim at detecting an excess of cosmic ray fluxes due to dark matter above expected astrophysical contributions. This can happen if dark matter annihilates or decays to standard model particles that then travel to Earth and can be detected by telescopes. This comes with its own significant challenges, given especially by the high astrophysical background. Despite this, some of the stricter bounds on dark matter annihilation cross section today \cite{Hooper_2018} come from this kind of experiments and by works like \cite{Profumo_2018}. In the following, I will show how the gamma-ray flux on Earth depends on the dark matter's properties and on the astrophysical properties of the object in study. This will be used to briefly discuss potential targets for indirect detection. Later, I will show how the hypotheses that we set on the astrophysical context can greatly impact the interpretation of the gamma-ray flux.
 
 \subsection{Gamma-ray flux from dark matter annihilation}
 In order to compute the contribution to gamma-ray fluxes from dark matter annihilation, I will start by counting the number of possible annihilating pairs in a volume \(\mathrm{d}^3 \vec{r}\). In the hypothesis of non-self-conjugate dark matter, this number is
@@ -110,10 +110,35 @@ Assuming that dark matter annihilates into a pair of standard model particles \(
 	\frac{\mathrm{d}N}{\mathrm{d}t} = \mathrm{d} ^3 \vec{r} \frac{1}{4} \left( \frac{\rho_{DM} (\vec{r})}{M_{DM} } \right)^2 \sum_{f} \langle \sigma v \rangle_f
 \end{equation}
 
-We can get the total number of photons produced per second in an energy bin \(\Delta E\) centred on \(E\) by multiplying by the number of photons produced by the species \(f\) inside the sum:
+We can get the rate of photons produced per second per energy unit by multiplying by the number of photons produced by the species \(f\) inside the sum:
 \begin{equation}
-	\frac{\mathrm{d}N_{\gamma } }{\mathrm{d}t}\Delta E = \mathrm{d} ^3 \vec{r} \frac{1}{4} \left( \frac{\rho_{DM} (\vec{r})}{M_{DM} } \right)^2 \sum_{f} \langle \sigma v \rangle_f \Delta E \frac{\mathrm{d}N_{f \to \gamma } }{\mathrm{d}E}    
+	\frac{\mathrm{d}N_{\gamma } }{\mathrm{d}t \mathrm{d} E} = \mathrm{d} ^3 \vec{r} \frac{1}{4} \left( \frac{\rho_{DM} (\vec{r})}{M_{DM} } \right)^2 \sum_{f} \langle \sigma v \rangle_f \frac{\mathrm{d}N_{f \to \gamma } }{\mathrm{d}E}
 \end{equation}
+To get the differential flux of photons per unit energy and per unit angle at the detector, we integrate over the line of sight \(s\) by writing the volume element as \(\mathrm{d} ^3 \vec{r}= s^2 \mathrm{d} s \mathrm{d} \Omega \). The integrand must be weighed by the distance factor \((4\pi s^2)^{-1} \):
+\begin{equation}\label{eq:flux_per_energy}
+	\frac{\mathrm{d}\Phi_{\gamma } }{\mathrm{d}E \mathrm{d} \Omega } = \int\limits_{los} \frac{1}{16\pi }\left( \frac{\rho_{DM} (\vec{r})}{M_{DM} } \right)^2 \sum_{f} \langle \sigma v \rangle _f \frac{\mathrm{d}N_{f\to \gamma } }{\mathrm{d}E} \mathrm{d} s,
+\end{equation}
+where \(\Phi_{\gamma } \) is the integrated gamma-ray flux, typically expressed in units of \(\mathrm{cm^{-2} s^{-1} } \). All the astrophysical information can be summarised by defining the so-called J-factor, which in the specific case of the Milky Way is
+\begin{equation}
+	J(\theta ) = \int\limits_{los} \frac{\mathrm{d}s}{r_\odot} \left( \frac{\rho_{DM} (s, \theta )}{\rho_\odot} \right)^2,
+\end{equation}
+which allows us to rewrite Eq. \eqref{eq:flux_per_energy} in the following form:
+\begin{equation}
+	\frac{\mathrm{d}\Phi_{\gamma } }{\mathrm{d}E \mathrm{d} \Omega }(\theta ) = \frac{1}{4} \frac{r_\odot}{4\pi }\left( \frac{\rho_\odot}{M_{DM} } \right)^2 J (\theta ) \sum_{f}  \langle \sigma v \rangle _f \frac{\mathrm{d}N_{f\to \gamma } }{\mathrm{d}E}, 
+\end{equation}
+where \(\theta \) is the aperture angle from the centre of the galaxy, \(r_\odot\) is the distance of the sun from the centre of the Milky Way, \(\rho_\odot\) is the local dark matter density, and \(s\) is related to \(r\) by the relation \(r=\sqrt{r_\odot^2 + s^2 - 2 r_\odot s \cos \theta } \). We are often interested in the gamma-ray flux integrated over a region that spans a spherical angle \(\Delta \Omega \). In this case, we define the averaged J-factor, which for an annulus centred around the galactic centre with \(\theta_{min }< \theta < \theta_{max} \) is \cite{Cirelli_2024}
+\begin{equation}
+	\overline{J} = \frac{2\pi }{\Delta \Omega } \int\limits_{\theta_{min}}^{\theta_{max} }\sin \theta J(\theta ) \mathrm{d} \theta 
+\end{equation}
+
+Inspecting the form of the averaged J-factor leads us to identify four main characteristics of promising indirect detection targets \cite{Hooper_2018}:
+\begin{enumerate}
+	\item High density of dark matter
+	\item Proximity to us
+	\item Extended across a large volume
+	\item Accompanied by a low astrophysical background
+\end{enumerate}
+Dwarf spheroidal galaxies (dSphs) are particularly interesting because of the last point, despite having rather small J-factors compared to the galactic centre. Therefore, in order to get reliable data from dSphs, years of observations must be collated and stacked analysis of multiple dSphs must be performed. This is what Profumo et al. did in \cite{Profumo_2018}.
 
 \subsection{Impact of J-factor on cross section estimates}
 
