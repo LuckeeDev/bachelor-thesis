@@ -74,8 +74,8 @@ Assuming a typical exponential mass distribution, Freeman \cite{Freeman_1970} de
 
 Two approaches have been attempted to solve this issue: the first one, known as Modified Newtonian Dynamics (MOND), sets out to adjust Newton's second law to explain the discrepancies in observational data, but has struggled to gain consensus and has been partially ruled out by evidence outlined in Section \ref{sec:bullet}. The second one, currently accepted by the scientific community, is the presence of additional dark matter inside galaxies.
 By inspecting Eq. \eqref{eq:rotational_velocity}, we can infer that \(v(r)\) would flatten in the case of \(M \propto r\), or in other words \(\rho \propto r^{-2} \) in the hypothesis of a spherically-distributed dark matter ``halo''\footnote{The hypothesis of the existence of these spherical ``halos'' is well-motivated, because as we will see later dark matter is non-dissipative and thus does not collapse to form a disk.}. The precise dark matter distribution can be derived from numerical simulations, which however strongly depend on the assumptions used to construct them. One of the most common profiles used in the literature, and also by Profumo et al. in the reference paper for this work \cite{Profumo_2018}, is the so-called Navarro-Frenk-White profile
-\begin{equation}
-	\rho_{NFW} (r) = \frac{\rho _s}{\frac{r}{r_s}\left( 1+ \frac{r}{r_s} \right)^2 },
+\begin{equation}\label{eq:NFW}
+	\rho_{\text{NFW}} (r) = \frac{\rho _s}{\frac{r}{r_s}\left( 1+ \frac{r}{r_s} \right)^2 },
 \end{equation}
 where \(\rho _s\) and \(r_s\) are scale parameters to be determined.
 
@@ -141,6 +141,17 @@ Inspecting the form of the averaged J-factor leads us to identify four main char
 Dwarf spheroidal galaxies (dSphs) are particularly interesting because of the last point, despite having rather small J-factors compared to the galactic centre. Therefore, in order to get reliable data from dSphs, years of observations must be collated and stacked analysis of multiple dSphs must be performed. This is what Profumo et al. did in \cite{Profumo_2018}.
 
 \subsection{Impact of J-factor on cross section estimates}
+The assumed dark matter profile, which enters in the flux calculation through the J-factor, can severely impact the dark matter annihilation cross section bounds. This can be shown by a simple numerical calculation. I am going to compare two different dark matter profiles: a spiked NFW profile like that in Eq. \eqref{eq:NFW}, and a cored one:
+\begin{equation}
+	\rho_{\text{NFW}}^{\text{core} } = \rho _s \frac{r_s}{r+ r_0} \frac{1}{\left( 1 + \frac{r}{r_s} \right) ^2}
+\end{equation}
+I am going to use the following parameters taken from Balaji et al. \cite{Balaji_2023} with reference to the Milky Way: \(r_s = 18.6 \mathrm{kpc}, \rho_\odot = 0.383 \mathrm{GeV / cm^3}, r_\odot = 8.2 \mathrm{kpc}  \) and \(\rho _s = \rho _\odot (r_\odot / r_s (1 + r_\odot / r_s)^2)\). For the cored profile, I will assume the core to have a size of \(r_0 = 0.5 \mathrm{kpc} \). With reference to the work by the H.E.S.S. collaboration in 2016 \cite{Abdallah_2016}, I computed the averaged J-factor over the annulus \([0.3^\circ, 1.0^\circ]\) (see [GitHub](https://github.com/LuckeeDev/bachelor-thesis) for the code):
+\begin{equation}
+	\overline{J}_{\text{NFW} } \simeq 1100
+	\qquad
+	\overline{J}_{\text{NFW} }^{\text{core} } \simeq 100   
+\end{equation}
+Since for a given gamma-ray flux \(\langle \sigma v \rangle \propto \overline{J}^{-1} \), we can see that bounds on the cross section can vary by up to an order of magnitude depending on the choice of the dark matter profile. In particular, bounds with a NFW profile will be stricter compared to those with a cored NFW profile.
 
 \section{Sommerfeld enhancement}
 
