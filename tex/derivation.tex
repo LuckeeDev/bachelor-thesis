@@ -5,7 +5,7 @@ The two-body problem involving the supposed new mediator \(\phi \) and the two i
 \end{equation}
 where \(m\) is the mass of the two identical Dark Matter particles, \(\Psi\) is the wavefunction of the system, \(V\) is the potential describing the interaction mediated by \(\phi \) and \(E\) is the total energy of the system.
 
-The first step to solving this equation is to rewrite it as a one-body problem in the centre-of-mass frame through the following substitutions: \(\vec{r} \coloneqq  \vec{r}_1 - \vec{r}_2\), which represents the distance between the two particles, and \(\vec{R} \coloneqq (\vec{r}_1 + \vec{r}_2) / 2\), which is the position of the centre-of-mass. Since the two particles have the same mass, the reduced mass is just \(\mu = m / 2\). The centre-of-mass Schrödinger becomes (see Appendix \ref{appendix:onebody})
+The first step to solving this equation is to rewrite it as a one-body problem in the centre-of-mass frame through the following substitutions: \(\vec{r} \coloneqq  \vec{r}_1 - \vec{r}_2\), which represents the distance between the two particles, and \(\vec{R} \coloneqq (\vec{r}_1 + \vec{r}_2) / 2\), which is the position of the centre-of-mass. Since the two particles have the same mass, the reduced mass is just \(\mu = m / 2\). The centre-of-mass Schrödinger equation becomes (see Appendix \ref{appendix:onebody})
 \begin{equation}
 	\left[- \frac{1}{2\mu }\nabla _r^2 + V(r)\right]\psi _r = E_{CM} \psi _r
 \end{equation}
@@ -33,7 +33,7 @@ where the radial functions \(R_{kl} \) satisfy the radial equation
 \begin{equation}\label{deriv:radial}
 	-\frac{1}{2\mu } \frac{1}{r^2} \frac{\mathrm{d}}{\mathrm{d}r}\left(r^2 \frac{\mathrm{d}}{\mathrm{d}r}  R_{kl}\right) + \left(V(r)+ \frac{1}{2\mu }\frac{l(l+1)}{r^2}\right)R_{kl} = \frac{k^2}{2\mu }R_{kl} 
 \end{equation}
-and the \(Y_m^l(\theta , \varphi )\) are the spherical harmonics. The incoming wave breaks the spherical symmetry and forbids any dependence on \(\varphi \), as there is nothing in the potential that could introduce it \cite{Griffiths}. Since \(Y_l^m \propto e^{im \varphi} P_l(\cos \theta ) \), where \(P_l\) is the \(l\)-th Legendre polynomial, we are forced to set \(m=0\) and we get that \(\psi_{kl} \propto R_{kl}(r) P_l (\cos \theta )\). This means that we can express our solution for a set \(k\) as the sum over all possible values of \(l\) of the base solutions, each with amplitude \(A_l\):
+and the \(Y_l^m(\theta , \varphi )\) are the spherical harmonics. The incoming wave breaks the spherical symmetry and forbids any dependence on \(\varphi \), as there is nothing in the potential that could introduce it \cite{Griffiths}. Since \(Y_l^m \propto e^{im \varphi} P_l(\cos \theta ) \), where \(P_l\) is the \(l\)-th Legendre polynomial, we are forced to set \(m=0\) and we get that \(\psi_{kl} \propto R_{kl}(r) P_l (\cos \theta )\). This means that we can express our solution for a set \(k\) as the sum over all possible values of \(l\) of the base solutions, each with amplitude \(A_l\):
 \begin{equation}\label{deriv:sum}
 	\psi _k = \sum_{l} A_l R_{kl} (r) P_l (\cos \theta )
 \end{equation}
@@ -207,12 +207,12 @@ We now have the solution we were looking for:
 \begin{equation}\label{deriv:solution}
 	\chi (x) = \frac{\Gamma \left(1-\frac{i}{2\varepsilon }\right) \varepsilon }{e^{i \eta - \frac{\pi}{4 \varepsilon }}}x e^{i\varepsilon x}M\left(1-\frac{i}{2\varepsilon },2,-2i \varepsilon x\right) 
 \end{equation}
-When taking the derivative at the origin, the only term that does not vanish is the one where we take the derivative of \(x \), leaving the exponential and the confluent hypergeometric function (which when evaluated at \(x=0\) yield \(1\)):
+When taking the derivative at the origin, the only term that does not vanish is the one where we take the derivative of \(x \), leaving the exponential and the confluent hypergeometric function untouched (which when evaluated at \(x=0\) yield \(1\)):
 \begin{align}
 	\frac{\mathrm{d}\chi }{\mathrm{d}x} (x=0) &=
 	\left.
 		\frac{\Gamma \left( 1- \frac{i}{2\varepsilon } \right) \varepsilon }{e^{i \eta -\frac{\pi}{4\varepsilon }}} e^{i\varepsilon x} M\left(1-\frac{i}{2\varepsilon },2,-2 i \varepsilon x\right)
-	\right\vert _{x=0} \\
+	\right\vert _{x=0}= \\
 	&= \frac{\Gamma \left( 1- \frac{i}{2\varepsilon }\right) \varepsilon }{e^{i \eta - \frac{\pi}{4\varepsilon }}}
 \end{align}
 The Sommerfeld enhancement factor is thus
