@@ -17,6 +17,7 @@ which is the standard description of a particle moving in a potential. To simpli
 
 \section{Reduction to radial problem}
 
+This first part of the solution is an extension of the calculations reported by Arkani-Hamed et al. in \cite{Arkani_2009}, with details of quantum scattering theory taken from two quantum mechanics textbooks: Griffiths \cite{Griffiths} and Cohen-Tannoudji et al. \cite{Cohen-Tannoudji}.
 If there was no potential, a valid solution would be a simple plane wave traveling in the \(z\) direction:
 \begin{equation}
 	\psi _k^{(0)} = e^{ikz} 
@@ -222,3 +223,5 @@ The Sommerfeld enhancement factor is thus
 	&= 2\pi \frac{\alpha}{v_{rel} } \frac{1}{1- e^{-2\pi \frac{\alpha}{v_{rel} }}}\label{eq:result},
 \end{align}
 where I have used Euler's reflection formula \(\Gamma (z) \Gamma (1-z) = \frac{\pi}{\sin(\pi z)}\), the Gamma function recurrence relation \(\Gamma (z+1)=z \Gamma (z)\) and the identity \(\sin (ix)=i \sinh (x)\) to prove the step between Eq. \eqref{eq:sef_gamma} and Eq. \eqref{eq:sef_sinh}.
+
+A more detailed discussion of the experimental implications is left for Chapter \ref{chap:implications}, however, one can look ahead at Figure \ref{fig:enhancement_factor} to visualize the impact of the Sommerfeld enhancement factor obtained in Eq. \eqref{eq:result}. As one can see from the colormap, it can enhance the annihilation cross-section by up to \(4-5\) orders of magnitude at low velocities and high masses.
