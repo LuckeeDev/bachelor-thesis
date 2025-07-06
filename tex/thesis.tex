@@ -1,5 +1,5 @@
-\documentclass[12pt, a4paper]{report}
-\usepackage[textwidth=450pt,bottom=4.5cm,top=4.5cm]{geometry}
+\documentclass[12pt, a4paper, twoside]{report}
+\usepackage[textwidth=450pt,bottom=4.5cm,top=4.5cm,hmarginratio=1:1]{geometry}
 \usepackage[english]{babel}
 \usepackage{xcolor}
 \usepackage[urlbordercolor=blue]{hyperref}
@@ -19,6 +19,15 @@
 \usetikzlibrary{patterns}
 
 \graphicspath{ {./images} }
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\nouppercase{\leftmark}}
+\fancyhead[RO]{\nouppercase{\rightmark}}
+\fancyfoot[LE, RO]{\thepage}
 
 \usepackage[
     backend=biber,
@@ -86,5 +95,6 @@
 
 \include{acknowledgments.tex}
 
+\pagestyle{plain}
 \printbibliography[heading=bibintoc]
 \end{document}
