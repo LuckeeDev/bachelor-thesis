@@ -1,6 +1,6 @@
 \documentclass[12pt, a4paper]{report}
+\usepackage[textwidth=450pt,bottom=4.5cm,top=4.5cm]{geometry}
 \usepackage[english]{babel}
-\usepackage{newlfont}
 \usepackage{xcolor}
 \usepackage[urlbordercolor=blue]{hyperref}
 \usepackage{mathtools}
@@ -31,8 +31,6 @@
 ]{biblatex}
 \addbibresource{bibliography.bib}
 
-\textwidth=450pt\oddsidemargin=0pt
-
 % Enable arXiv linking
 \DeclareFieldFormat{eprint:arxiv}{%
   \mkbibbrackets{\href{https://arxiv.org/abs/#1}{\nolinkurl{#1}}}%
@@ -62,10 +60,7 @@
 
 \include{title.tex}
 
-\newpage
-\
-\thispagestyle{empty}
-\newpage
+\include{quote.tex}
 
 \include{abstract.tex}
 
