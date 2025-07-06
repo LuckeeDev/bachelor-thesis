@@ -4,7 +4,7 @@ The Sommerfeld enhancement factor derived in Chapter \ref{chap:derivation} can g
 
 \section{The Fermi-LAT limits}
 
-Profumo et al. \cite{Profumo_2018} reviewed data coming from the H.E.S.S., Fermi-LAT and Planck collaborations to set upper bounds on the annihilation cross section in the hypothesis of self-conjugate dark matter. Fermi-LAT data concerns 15 dSphs, which are astronomical objects that, due to their very low velocity dispersion, are an interesting target to understand the implications of the Sommerfeld enhancement. The study assumes that dark matter preferentially annihilates into non-SM particles, like two short-lived dark mediators \(\phi \), that later decay into SM particles like quarks and leptons. This scenario is typically referred to as ``secluded dark matter''. For the sake of this research, I will only focus on the decay to \(4\tau \) leptons, so that the Fermi-LAT limit is the strongest one. This constrains the mass of the mediator to be
+Profumo et al. \cite{Profumo_2018} reviewed data coming from the H.E.S.S., Fermi-LAT and Planck collaborations to set upper bounds on the annihilation cross section in the hypothesis of self-conjugate dark matter. Fermi-LAT data concerns 15 dSphs, which are astronomical objects that, due to their very low velocity dispersion, are an interesting target to understand the implications of the Sommerfeld enhancement. The study assumes that dark matter preferentially annihilates into non-SM particles, like two short-lived dark mediators \(\phi \), that later decay into SM particles like quarks and leptons. This scenario is typically referred to as ``secluded dark matter''. For the sake of this research, I will only focus on the decay to \(4\tau \) leptons, so that the Fermi-LAT limit is the strongest one. The qualitative findings of this study would not change if I used other kinematically allowed decays into charged leptons, quarks or vector bosons. This constrains the mass of the mediator to be
 \begin{equation}\label{eq:mediator_mass}
 	m_{\phi }  > 2 m_{\tau } 
 \end{equation}
@@ -52,7 +52,7 @@ in order for the decay to be allowed. The Feynman diagram for this supposed deca
 
 In their study, Profumo et al. include results for different mass regimes, but I will only consider the ones for \(M_{DM} \gg M_{\phi } \) (in accordance with the hypothesis that the mediator mass is negligible). Moreover, the original Fermi-LAT limits must be weakened by a factor of \(2\), because dark matter is not its own antiparticle in the model I am considering.
 % TODO: non sono convintissimo di questa frase
-This effectively halves the chances of annihilation, allowing the cross section to double. In order to compare the limits to the theoretical predictions, I extracted the data from Figure 6 in \cite{Profumo_2018} by using a plot digitizer and I then interpolated them using a cubic spline, in order to plot them and to find the intersections with the theoretical values.
+This effectively halves the chances of annihilation, allowing the cross section to double. In order to compare the limits to the theoretical predictions, I extracted data points from Figure 6 in \cite{Profumo_2018} by using a plot digitizer and I then interpolated them, in order to plot them and to find the intersections with the theoretical values.
 Both the original limits and the weakened limits are shown in Section \ref{sec:results} alongside the results in Fig. \ref{fig:comparison}, in a green and a black dashed line respectively.
 
 \section{The impact of Sommerfeld enhancement}
@@ -74,12 +74,12 @@ where \(v\) is the relative velocity between the two dark matter particles, whic
 \begin{equation}
 	\left \langle \frac{1}{v} \right \rangle \simeq 4
 \end{equation}
-More precisely, one should compute a thermal average of the Sommerfeld enhancement factor and use that in Eq. \eqref{eq:relic_Sommerfeld}, but at these velocities the difference between an averaged enhancement factor and the same factor calculated at \(v= \langle v \rangle \) is almost non-existent. Equation \eqref{eq:relic_Sommerfeld} does not have an analytic solution and must therefore be solved with numerical tools. Fig. \ref{fig:alpha} compares \(\alpha (M_{DM} )\) in the two cases and shows that the difference becomes noticeable for masses around \(1 \mathrm{TeV} \).
+More precisely, one should compute a thermal average of the Sommerfeld enhancement factor and use that in Eq. \eqref{eq:relic_Sommerfeld}, but at these velocities the difference between an averaged enhancement factor and the same factor calculated at \(v= \langle v \rangle \) is almost non-existent. Equation \eqref{eq:relic_Sommerfeld} does not have an analytic solution and must therefore be solved with numerical tools. Fig. \ref{fig:alpha} compares \(\alpha (M_{DM} )\) in the two cases and shows that the difference becomes noticeable for masses higher than about \(1 \mathrm{TeV} \).
 
 \begin{figure}[htbp]
 	\centering
 	\includegraphics[width=0.9\textwidth]{alpha.pdf}
-	\caption{Comparison between the \(\alpha (M_{DM} )\) relations with and without Sommerfeld enhancement at freeze-out, in red and blue respectively. \(\langle 1 / v \rangle \simeq 4 \) at freeze-out.}
+	\caption{Comparison between the \(\alpha (M_{DM} )\) relations with and without Sommerfeld enhancement at freeze-out, in red and blue respectively. The graph shows the range of masses where the effect is more important.}
 	\label{fig:alpha}
 \end{figure}
 
@@ -121,7 +121,7 @@ The same reasoning can be applied to the enhanced cross section from Eq. \eqref{
 \begin{equation}\label{eq:result_enhanced}
 	M_{DM} \gtrsim 9.9 \mathrm{TeV}
 \end{equation}
-in the case with Sommerfeld enhancement. Figure \ref{fig:comparison} summarizes these findings and clearly shows where the constraints come from. We conclude that the presence of Sommerfeld enhancement can impact by orders of magnitude the constraints we put on the dark matter mass, as can be clearly seen by comparing Eq. \eqref{eq:result_simple} and Eq. \eqref{eq:result_enhanced}. This has deep experimental implications, because it changes the way experiments have to look for this dark matter.
+in the case with Sommerfeld enhancement. Figure \ref{fig:comparison} summarizes these findings and clearly shows where the constraints come from. We conclude that the presence of Sommerfeld enhancement can impact by orders of magnitude the constraints we put on the dark matter mass, as can be clearly seen by comparing Eq. \eqref{eq:result_simple} and Eq. \eqref{eq:result_enhanced}. Ignoring Sommerfeld enhancement would thus lead to badly wrong conclusions. This has deep experimental implications, because it changes the way experiments have to look for this dark matter.
 
 \begin{figure}[!ht]
 	\centering
