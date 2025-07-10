@@ -197,7 +197,7 @@ Solution:
 \end{frame}
 
 \begin{frame}
-\frametitle{Experimental implications: theoretical framework}
+\frametitle{Experimental implications (1): theoretical framework}
 We are now considering the impact on the interpretation of the Fermi-LAT limits presented earlier.\\
 We are considering a dark matter model where:
 \begin{itemize}
@@ -209,8 +209,40 @@ We are considering a dark matter model where:
 \end{frame}
 
 \begin{frame}
-\frametitle{Experimental implications: Sommerfeld enhancement}
+\frametitle{Experimental implications (2): \(\alpha \) and \(M_{DM} \)}
 The cross section without Sommerfeld enhancement is independent of velocity:
+\[
+	\sigma v = \frac{\pi \alpha ^2}{M_{DM} ^2}
+\]
+\pause
+This forces a linear relation between mass and interaction strength:
+\[
+	\alpha (M_{DM} ) = M_{DM} \sqrt{\frac{\langle \sigma v \rangle_{relic} }{\pi }} 
+\]
+\end{frame}
+
+\begin{frame}
+\frametitle{Experimental implications (2): \(\alpha \) and \(M_{DM} \)}
+Introducing Sommerfeld enhancement at the time of freeze-out sets the relation between \(\alpha \) and \(M_{DM} \) implicitly through
+\[
+	\langle \sigma v \rangle_{relic} = \frac{2\pi \alpha ^3}{M_{DM} ^2} \frac{1 / v}{1-e^{-2\pi \frac{\alpha }{v}}}
+\]
+\pause
+We solve this equation numerically and use the fact that
+\[
+	\left\langle \frac{1}{v} \right\rangle \simeq 4
+\]
+at the time of freeze-out
+\end{frame}
+
+\begin{frame}
+\frametitle{Experimental implications (3): \(\alpha \) and \(M_{DM} \)}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{alpha.pdf}
+	\caption{Comparison between the linear relation obtained without Sommerfeld enhancement and the }
+	\label{fig:}
+\end{figure}
 \end{frame}
 
 \end{document}
